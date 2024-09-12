@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #263238;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #cfd8dc;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    padding-left: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    color: #3e31fa;
+}
+
+.players {
+    padding: 2rem;
+    text-align: center;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, max-content));
+    gap: 1rem;
+    padding: 2rem 0;
+    justify-content: start;
+}
+
+.player-card {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+.player-card img {
+    max-width: 200px;
+    height: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+.player-name {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.player-position {
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 0.5rem;
+    }
+
+    nav li {
+        padding: 0.5rem 0;
+    }
+
+    .player-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+footer {
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    margin-bottom: 1rem;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.socials li {
+    margin: 0 0.5rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #3e31fa;
+}
+
+.footer-bottom {
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #455a64;
+}
+
+.left-position {
+    position: absolute;
+    left: 8;
+}
