@@ -10,7 +10,7 @@ body {
     color: #263238;
 }
 
-.player-header {
+.jugador-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,25 +19,25 @@ body {
     color: white;
 }
 
-.player-header h1 {
+.jugador-header h1 {
     font-size: 3rem;
     font-weight: bold;
 }
 
-.player-header .number {
+.jugador-header .numero {
     font-size: 4rem;
 }
 
-.player-header p {
+.jugador-header p {
     font-size: 1.5rem;
 }
 
-.player-image img {
+.jugador-imagen img {
     max-width: 250px;
     border-radius: 8px;
 }
 
-.player-stats {
+.estadisticas {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -45,7 +45,7 @@ body {
     background-color: #eceff1;
 }
 
-.stats-box {
+.caja-estadistica {
     background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
@@ -54,44 +54,43 @@ body {
     width: 150px;
 }
 
-.stats-box p {
+.caja-estadistica p {
     font-size: 2rem;
     font-weight: bold;
     color: #3e31fa;
 }
 
-.stats-box span {
+.caja-estadistica span {
     font-size: 1rem;
     color: #757575;
 }
 
-.player-details {
+.detalles-jugador {
     display: flex;
     justify-content: space-around;
     padding: 3rem;
     background-color: white;
 }
 
-.details-section {
+.datos-personales, .trayectoria {
     max-width: 500px;
 }
 
-.details-section h2 {
+.datos-personales h2, .trayectoria h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.details-section ul {
+.datos-personales ul, .trayectoria ul {
     list-style: none;
 }
 
-.details-section ul li {
+.datos-personales ul li, .trayectoria ul li {
     font-size: 1rem;
     margin-bottom: 0.5rem;
 }
 
-.details-section ul li strong {
+.datos-personales ul li strong, .trayectoria ul li strong {
     font-weight: bold;
     color: #3e31fa;
 }
-        
