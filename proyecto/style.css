@@ -31,6 +31,10 @@ nav a {
     color: rgb(255, 255, 255);
 }
 
+.tit {
+    color: azure;
+}
+
 nav a:hover {
     color: #3e31fa;
 }
