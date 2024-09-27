@@ -34,4 +34,11 @@ a {
 }
 .certer{
     text-align: center;
+    margin: 0 ;
+}
+
+nav {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 21px;
 }
