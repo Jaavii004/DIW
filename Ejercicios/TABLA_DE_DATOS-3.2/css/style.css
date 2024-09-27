@@ -1,0 +1,26 @@
+table, tr, th, td {
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #FFFFCC;
+}
+
+tbody tr:hover {
+    background-color: #FFFF66;
+}
+
+td:first-child {
+    background-color: #E6F3FF;
+    font-weight: bold;
+}
+
+th {
+    background-image: url("../img/fondo_gris.gif");
+    font-weight: bold;
+}
+
+img { 
+    margin-left: 3px;
+}
