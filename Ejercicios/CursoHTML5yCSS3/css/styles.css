@@ -29,7 +29,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
 }
 
 .marcador {
@@ -45,6 +44,32 @@ body {
     width: 100%;
 }
 
+.container-cursos {
+    background-image: url("../imgs/lgrey008.jpg");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
+.curso {
+    text-align: center;
+    padding: 15px;
+    background-color: white;
+    margin: 13px;
+}
 
+.curso img {
+    max-width: 100%;
+}
 
+.container-footer {
+    text-align: center;
+    justify-content: center;
+    background-color: #313b44;
+    padding: 15px;
+}
+
+.tit-foter {
+    color: white;
+    margin: 15px;
+}
