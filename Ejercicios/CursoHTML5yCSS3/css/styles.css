@@ -1,0 +1,50 @@
+body {
+    background-image: url("../imgs/old_map.png");
+}
+
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.container-titulo {
+    background-color: #313b44;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 11px;
+}
+
+.tit {
+    color: white;
+}
+
+.tit img {
+    padding: 15px;
+}
+
+.container-menu {
+    background-image: url("../imgs/red015.jpg");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.marcador {
+    display: inline;
+    margin: 15px 0;
+    text-align: center;
+    color: white;
+}
+
+.raya {
+    background-color: black;
+    height: 7px;
+    width: 100%;
+}
+
+
+
+
