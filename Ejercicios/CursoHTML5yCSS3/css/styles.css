@@ -16,6 +16,10 @@ body {
     padding: 11px;
 }
 
+.cont:hover {
+    color: white;
+}
+
 .tit {
     color: white;
 }
@@ -35,7 +39,7 @@ body {
     display: inline;
     margin: 15px 0;
     text-align: center;
-    color: white;
+    color: yellow;
 }
 
 .raya {
