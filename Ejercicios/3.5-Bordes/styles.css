@@ -2,6 +2,10 @@ body {
     background-color:  rgb(95, 158, 160);
 }
 
+* {
+    font-weight: bold;
+}
+
 .contenedor {
     width: 490px;
     background-color: white;
