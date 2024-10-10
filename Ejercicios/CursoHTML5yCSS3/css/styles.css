@@ -1,5 +1,5 @@
 body {
-    background-image: url("../imgs/old_map.png");
+    background: linear-gradient(#dd5724, #f7ded3);
 }
 
 .container-principal {
@@ -8,8 +8,9 @@ body {
     margin: 10px;
 }
 
-.container-titulo {
-    background-color: #313b44;
+header {
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(#0476b9, #1ca5dc);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -28,11 +29,12 @@ body {
     padding: 15px;
 }
 
-.container-menu {
+nav {
     background-image: url("../imgs/red015.jpg");
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background: linear-gradient(#dbbe36, #f4db2f);
 }
 
 .marcador {
@@ -48,25 +50,30 @@ body {
     width: 100%;
 }
 
-.container-cursos {
-    background-image: url("../imgs/lgrey008.jpg");
+article {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
-
-.curso {
-    text-align: center;
-    padding: 15px;
     background-color: white;
-    margin: 13px;
 }
 
-.curso img {
+section {
+    max-width: 200px;
+    text-align: center;
+    padding: 0px;
+    background-color: white;
+
+
+    border: 60px solid;
+    border-image: url(../imgs/movil.png) 80 50 70 50;
+   
+}
+
+section img {
     max-width: 100%;
 }
 
-.container-footer {
+footer {
     text-align: center;
     justify-content: center;
     background-color: #313b44;
