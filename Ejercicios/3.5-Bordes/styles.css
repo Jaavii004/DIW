@@ -1,13 +1,13 @@
 body {
-    background-color: rgb(95, 158, 160);
+    background-color:  rgb(95, 158, 160);
 }
 
 .contenedor {
+    width: 490px;
     background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 57px;
 }
 
 h1 {
@@ -32,65 +32,112 @@ h1 {
 }
 
 .caja1 {
+    margin: 10px;
     border: 1px solid black;
     border-radius: 17px 19px 8px 40px;
-    padding: 0px 40px;
+    padding: 10px 40px;
 }
 
 .caja2 {
+    margin: 10px;
     border: 1px solid black;
     border-radius: 3px;
-    padding: 0px 40px;
+    padding: 10px 40px;
 }
 
 .caja3 {
-    border: 1px solid black;
-    padding: 0px 40px;
+
+    background: linear-gradient(white, rgb(95, 158, 160));
+    margin: 10px;
     border-radius: 30px;
-    background: linear-gradient(white, cadetblue);
+    padding: 10px 40px;
+    border: 1px solid black;
 }
 
 .caja4 {
+
+    padding: 10px 40px;
     border: 1px solid black;
     border-radius: 35px;
-    padding: 0px 40px;
-    background: radial-gradient(white, cadetblue);
+    background: radial-gradient(white, rgb(95, 158, 160));
+    margin: 10px;
 }
 
 .caja5 {
-    width: 100px;
-    height: 50px;
-    background-color: #eff7f7;
-    border-radius: 50px;
+
+    margin: 10px;
+    border: 1px solid black;
+    padding: 0px 40px;
+    border-radius: 25px;
 }
 
 .caja6 {
-    width: 100px;
-    height: 50px;
-    border-radius: 0;
+
+    margin: 10px;
+    border: 1px solid black;
+    padding: 0px 35px;
 }
 
 .bloque2 {
+
+    margin: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
 }
 
-.bloque2 .caja {
-    width: 100%;
-    height: 40px;
+
+.caja7 {
+
+    margin: 10px;
+    border: 1px solid;
+    padding: 10px 40px;
     border-radius: 20px;
+    box-shadow: 5px 5px 5px rgb(95, 158, 160);
 }
 
-.caja7, .caja10 {
-    background-color: #a1bfc9;
+.caja8{
+
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 30px;
 }
 
-.caja8, .caja9 {
+.caja9 {
+    padding: 10px 40px;
+    margin: 10px;
     background-color: white;
     border: 2px solid black;
 }
 
 .caja9 {
-    border: 2px solid black;
+
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 30px;
+    text-shadow: 5px 3px 3px rgb(95, 158, 160);
+}
+
+.caja10{
+
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, rgb(241, 240, 240), rgb(95, 158, 160) 70%);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color:  rgb(95, 158, 160);
+    margin: 20px 0;
+}
+
+h2 {
+    text-align: left;
+    margin: 0;
 }
