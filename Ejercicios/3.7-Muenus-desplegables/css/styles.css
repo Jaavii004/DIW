@@ -1,0 +1,67 @@
+/* Inicializamos márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del menú principal */
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav li {
+    position: relative; /* Para posicionar el submenú */
+    margin: 0 40px; /* Espacio entre elementos */
+}
+
+/* Estilo de los enlaces del menú principal */
+nav li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px; /* Espacio alrededor del texto */
+}
+
+nav li a:hover {
+    color: red;
+}
+
+/* Estilos del submenú */
+nav li ul {
+    position: absolute;
+    list-style-type: none;
+    width: 200px; /* Aumentar el ancho del submenú */
+    background-color: #313131;
+    top: 100%; /* Justo debajo del menú principal */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar el submenú */
+    display: none; /* Ocultar por defecto */
+    padding: 0; /* Sin padding por defecto */
+    border: none; /* Sin borde */
+}
+
+nav li:hover ul {
+    display: block; /* Mostrar el submenú al hacer hover */
+}
+
+/* Estilos de los ítems del submenú */
+nav li ul li {
+    background-color: #313131;
+}
+
+nav li ul li:nth-child(odd) {
+    background-color: #363636;
+}
+
+nav li ul li:hover {
+    background-color: #444;
+}
+
+/* Estilos de los enlaces del submenú */
+nav li ul li a {
+    display: block;
+    padding: 15px 20px; /* Aumentar el padding para que el texto esté centrado */
+    color: #fff;
+    text-decoration: none;
+    text-align: center; /* Centrar el texto */
+}
