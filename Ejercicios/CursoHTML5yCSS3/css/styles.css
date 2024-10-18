@@ -15,18 +15,18 @@ header {
     align-items: center;
     gap: 20px;
     padding: 11px;
-}
-
-.cont:hover {
-    color: white;
+    position: relative; /* Añadido para posicionar elementos absolutos */
 }
 
 .tit {
     color: white;
 }
 
-.tit img {
-    padding: 15px;
+.tit .logo {
+    position: absolute; /* Cambiado a absoluto */
+    top: 10px; /* Ajusta según necesites */
+    right: 20px; /* Ajusta según necesites */
+    width: 50px; /* Ajusta según necesites */
 }
 
 nav {
@@ -50,7 +50,8 @@ nav {
     width: 100%;
 }
 
-article {
+main {
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -62,15 +63,29 @@ section {
     text-align: center;
     padding: 0px;
     background-color: white;
-
-
     border: 60px solid;
     border-image: url(../imgs/movil.png) 80 50 70 50;
-   
+}
+
+section:first-child {
+    transform: rotate(-2deg); /* Rotación del primer artículo */
+}
+
+section:last-child {
+    transform: rotate(2deg); /* Rotación del tercer artículo */
 }
 
 section img {
     max-width: 100%;
+}
+
+.chincheta {
+    position: absolute; /* Posición absoluta para la chincheta */
+    width: 35px;
+    height: 49px;
+    background-image: url(../imgs/chincheta.png); /* Ruta de la imagen */
+    background-size: cover; /* Ajuste de la imagen */
+    top: -91px; /* Ajusta según necesites */
 }
 
 footer {
@@ -83,4 +98,19 @@ footer {
 .tit-foter {
     color: white;
     margin: 15px;
+}
+
+/* Efecto de transición en los enlaces de navegación */
+.cont {
+    transition: color 0.5s;
+}
+
+.cont:hover {
+    color: white;
+    text-shadow: 2px 2px 5px red; /* Sombra en hover */
+}
+
+
+main section:last-of-type .chincheta img {
+    left: 120px;
 }
