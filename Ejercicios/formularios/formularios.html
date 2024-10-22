@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form method="post">
+        <h1>Regístrate!</h1>
+        <label for="nombre">Mi nombre es:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="email">Mi email es:</label>
+        <input type="email" id="email" name="email" multiple required placeholder="ejemplo@dominio.com">
+        <br>
+        <label for="recuerdame">Recuérdame en este equipo</label>
+        <input type="checkbox" id="recuerdame" name="recuerdame">
+        <br>
+        <label for="url">Mi dirección web es:</label>
+        <input type="url" id="url" name="url" placeholder="https://ejemplo.com">
+        <br>
+        <label for="password1">Me gustaría que mi password fuera:</label>
+        <input type="password" id="password1" name="password1" minlength="6" required>
+        <br>
+        <label for="password2">Mi password repetida es:</label>
+        <input type="password" id="password2" name="password2" minlength="6" required>
+        <br>
+        <label for="conocimientos">En una escala de 1 a 10, mis conocimientos de HTML5 son:</label>
+        <input type="range" id="conocimientos" name="conocimientos" min="1" max="10">
+        <br>
+        <label for="fechaInicio">Por favor, inicia mi suscripción el día:</label>
+        <input type="date" id="fechaInicio" name="fechaInicio" required>
+        <br>
+        <label for="cantidad">Me gustaría recibir copias de El manual de HTML5:</label>
+        <input type="number" id="cantidad" name="cantidad" min="0" max="5" value="1">
+        <br>
+        <label for="tambienCSS3">También regístrame para El manual de CSS3</label>
+        <input type="checkbox" id="tambienCSS3" name="tambienCSS3">
+        <br>
+        <button id="registro-submit" type="button">ENVIÁME</button>
+    </form>
+</body>
+</html>
