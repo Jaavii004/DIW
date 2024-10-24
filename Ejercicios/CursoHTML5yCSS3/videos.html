@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos - Curso HTML5 y CSS3</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/reproductor.css">
+</head>
+
+<body>
+    <div class="container-principal">
+        <header>
+            <h1 class="tit">
+                <img src="./imgs/logo.png" alt="Logo" class="logo">
+                Curso de HTML5 y CSS3
+            </h1>
+        </header>
+
+        <div class="raya"></div>
+        <nav>
+            <div class="marcador">
+                <img src="imgs/book.png" alt="Book">
+                <p class="cont">Contenidos</p>
+            </div>
+            <div class="marcador videos">
+                <img src="imgs/film.png" alt="film">
+                <p class="cont">Vídeos</p>
+                <ul class="bajar">
+                    <li><a href="videos1.html">Vídeo 1</a></li>
+                    <li><a href="videos2.html">Vídeo 2</a></li>
+                    <li><a href="videos3.html">Vídeo 3</a></li>
+                </ul>
+            </div>
+            <div class="marcador">
+                <img src="imgs/mail.png" alt="mail">
+                <p class="cont">Contacto</p>
+            </div>
+        </nav>
+        
+        <main>
+            <div id="reproductor">
+                <video id="medio" width="720" height="400" controls>
+                    <source src="media/trailer.mp4" type="video/mp4">
+                    <source src="media/trailer.ogg" type="video/ogg">
+                    Tu navegador no soporta el elemento de vídeo.
+                </video>
+                <div id="barra">
+                    <div id="progreso"></div>
+                </div>
+            </div>
+            <nav>
+                <input type="button" id="reiniciar" value="Reiniciar">
+                <input type="button" id="retrasar" value="&laquo;">
+                <input type="button" id="play" value="&#9658;">
+                <input type="button" id="adelantar" value="&raquo;">
+                <input type="button" id="silenciar" value="Silenciar">
+                <label>Volumen</label>
+                <input type="button" id="menosVolumen" value="-">
+                <input type="button" id="masVolumen" value="+">
+            </nav>
+        </main>
+        
+        <div class="raya"></div>
+        <footer>
+            <div class="tit-foter">HTML5 Y CSS3</div>
+            <div class="tit-foter">Diseño de interfaces web - 2DAW</div>
+        </footer>
+    </div>
+</body>
+
+</html>

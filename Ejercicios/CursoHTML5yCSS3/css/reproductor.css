@@ -1,0 +1,51 @@
+/* Estilos para el reproductor de vídeo */
+#reproductor {
+    position: relative;
+    text-align: center;
+    margin: 20px auto;
+}
+
+#barra {
+    width: 705px;
+    margin: 5px auto;
+    height: 16px;
+    padding: 2px;
+    border: 1px solid #CCCCCC;
+    background: #EEEEEE;
+    position: relative;
+}
+
+#progreso {
+    position: absolute;
+    width: 0;
+    height: 16px;
+    background: rgba(0, 0, 150, .2);
+}
+
+/* Estilos para los botones del reproductor */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+input[type="button"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e34c26;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="button"]:hover {
+    background-color: #f06529;
+    transform: scale(1.05);
+}
+
+label {
+    margin-left: 10px;
+    color: #333;
+}
