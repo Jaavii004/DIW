@@ -14,6 +14,7 @@ label {
     text-align: center;
     font-family: 'LeagueGothic', sans-serif;
 }
+
 input {
     border: none;
     border-bottom: 1px dotted #000;
@@ -21,13 +22,12 @@ input {
     width: 70%;
     text-align: center;
     padding: 10px;
-    background-image: url('../imgs/required.png');
     background-repeat: no-repeat;
     background-position: right;
 }
 
-#url {
-    background-image: none;
+input:required {
+    background-image: url('../imgs/required.png');
 }
 
 input:focus {
@@ -36,7 +36,6 @@ input:focus {
 }
 
 h1 {
-    font-family: 'AcknowledgementMedium', sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
     background-image: url('../imgs/bg-formtitle-left.png'), url('../imgs/bg-formtitle-right.png');
@@ -48,7 +47,7 @@ h1 {
 button {
     width: 50%;
     padding: 15px;
-    background: radial-gradient(rgb(144, 144, 144), rgb(72, 72, 72));
+    background: radial-gradient(circle, rgb(144, 144, 144), rgb(72, 72, 72)); /* Fondo degradado radial */
 
     border-radius: 5px;
     color: white;
@@ -60,4 +59,37 @@ button {
 
 button:hover {
     opacity: 1;
+}
+
+input:focus:invalid {
+    background-image: url(../imgs/invalid.png);
+}
+
+input:focus:valid {
+    background-image: url(../imgs/valid.png);
+}
+
+input[type=number] {
+    width: 10%;
+    padding-right: 35px;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: #a1a1a1;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #a1a1a1;
+}
+
+input[type="range"]:focus:valid {
+    background-image: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
 }
