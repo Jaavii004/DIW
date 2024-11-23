@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap');
+
+main {
+    background: url(../imgs/fondoForm.jpg) no-repeat center center/cover;
+}
+
+/* Encabezado del formulario */
+#contenedorFormulario h1 {
+    position: absolute;
+    left: 490px;
+    top: -16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Aguafina Script', cursive;
+    font-style: italic;
+    color: #333;
+    text-shadow: 0px 0px 2px #777;
+    padding: 0 10px;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+/* Contenedor del formulario */
+#contenedorFormulario {
+    position: relative;
+    display: inline-block;
+    margin: 50px;
+    padding: 40px 50px;
+    width: 600px;
+    background-color: rgba(200, 200, 200, 0.9);
+    text-align: left;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de los campos */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    display: block;
+    width: 90%;
+    padding: 10px 45px;
+    border: 2px solid #c8c4c4;
+    background: no-repeat 10px center;
+    background-size: 20px;
+    font-weight: bold;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    margin-bottom: 15px;
+}
+
+/* Iconos de validación */
+form input[type="text"]:valid,
+form input[type="email"]:valid {
+    background-image: url('../imgs/valid.png');
+    background-position: right 10px center;
+}
+
+form input[type="text"]:invalid,
+form input[type="email"]:invalid {
+    background-image: url('../imgs/invalid.png');
+    background-position: right 10px center;
+}
+
+/* Efectos al enfocar */
+form input:focus,
+form textarea:focus {
+    outline: 2px solid #0056b3;
+    box-shadow: 0px 0px 10px rgba(0, 86, 179, 0.5);
+}
+
+/* Campos con íconos específicos */
+#nombre {
+    background-image: url('../imgs/icon-nombre.png');
+}
+
+#email {
+    background-image: url('../imgs/icon-correo.png');
+}
+
+#mensaje {
+    height: 150px;
+    background-image: url('../imgs/icon-mensaje.png');
+}
+
+/* Botón de envío */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #5e5e5e, #2a2a2a);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to top, #5e5e5e, #2a2a2a);
+}
+
+/* Indicador de campo obligatorio */
+input[required] + label::after {
+    content: '*';
+    color: red;
+    margin-left: 5px;
+}
