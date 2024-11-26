@@ -1,8 +1,10 @@
-/* Estilos para el reproductor de vídeo */
 #reproductor {
     position: relative;
     text-align: center;
     margin: 20px auto;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: inset 2px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #barra {
@@ -13,6 +15,7 @@
     border: 1px solid #CCCCCC;
     background: #EEEEEE;
     position: relative;
+    margin: 10px auto;
 }
 
 #progreso {
@@ -20,13 +23,6 @@
     width: 0;
     height: 16px;
     background: rgba(0, 0, 150, .2);
-}
-
-/* Estilos para los botones del reproductor */
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
 }
 
 input[type="button"] {
@@ -48,4 +44,21 @@ input[type="button"]:hover {
 label {
     margin-left: 10px;
     color: #333;
+}
+
+main nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    justify-content: center;
+}
+
+main nav input[type="button"] {
+    background-color: #e94d2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100px;
 }
