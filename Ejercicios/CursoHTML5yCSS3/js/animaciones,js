@@ -1,0 +1,30 @@
+// Activar animaciones encadenadas
+window.addEventListener('load', () => {
+    // Chincheta 1
+    const chincheta1 = document.querySelector('section:nth-of-type(1) .chincheta');
+    chincheta1.classList.add('chincheta1');
+
+    chincheta1.addEventListener('animationend', () => {
+        // Artículo 1
+        const article1 = document.querySelector('section:nth-of-type(1)');
+        article1.classList.add('article1');
+
+        article1.addEventListener('animationend', () => {
+            // Chincheta 2
+            const chincheta2 = document.querySelector('section:nth-of-type(2) .chincheta');
+            chincheta2.classList.add('chincheta2');
+
+            chincheta2.addEventListener('animationend', () => {
+                // Chincheta 3
+                const chincheta3 = document.querySelector('section:nth-of-type(3) .chincheta');
+                chincheta3.classList.add('chincheta3');
+
+                chincheta3.addEventListener('animationend', () => {
+                    // Artículo 3
+                    const article3 = document.querySelector('section:nth-of-type(3)');
+                    article3.classList.add('article3');
+                });
+            });
+        });
+    });
+});

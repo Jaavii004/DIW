@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E1 Paiporta</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            color: #333;
+        }
+
+        .contenedor {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            padding: 15px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-enlaces {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-enlace {
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.1s ease;
+        }
+
+        .nav-enlace:hover {
+            color: #291f1f;
+        }
+
+        .logo-pequeño {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .img-cabezera {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background-image: url('https://scontent-mad1-1.xx.fbcdn.net/v/t39.30808-6/240988772_507926177087646_5278295779594015397_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=eFXObYzFczIQ7kNvgEzPU2q&_nc_zt=23&_nc_ht=scontent-mad1-1.xx&_nc_gid=A5pNTF2EHgl4so3Xab6wSaf&oh=00_AYDEFwlBCB4_JHN2YTzWUiwU9Q8AWI7WcoawDeGnhlfzNg&oe=675B5BF4');
+            background-size: cover;
+            background-position: bottom center;
+        }
+
+        .titulo-img-cabezera {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .separador {
+            width: 60%;
+            margin: 10px auto;
+            border: 1px solid #333;
+        }
+
+        .players-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding-bottom: 20px;
+            overflow-y: auto;
+        }
+
+        .player-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            width: 150px;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .player-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .player-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .player-position {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .player-card:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-content {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .footer-bottom {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo"><img src="./img/logo.png" class="logo-pequeño" alt=""> E1 Paiporta</div>
+            <div class="nav-enlaces">
+                <a href="#" class="nav-enlace">Equipos</a>
+                <a href="#" class="nav-enlace">Entrenadores</a>
+                <a href="#" class="nav-enlace">Sobre nosotros</a>
+            </div>
+        </header>
+
+        <section>
+            <div class="img-cabezera">
+                <div class="titulo-img-cabezera"> Alevin Preferente</div>
+            </div>
+            <hr class="separador">
+        </section>
+
+        <section class="players">
+            <h2>Porteros</h2>
+            <div class="players-section">
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 1</p>
+                    <p class="player-position">Portero</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 2</p>
+                    <p class="player-position">Portero</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 3</p>
+                    <p class="player-position">Portero</p>
+                </div>
+                <!-- Agrega más jugadores aquí si es necesario -->
+            </div>
+
+            <h2>Defensa</h2>
+            <div class="players-section">
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 4</p>
+                    <p class="player-position">Defensa</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 5</p>
+                    <p class="player-position">Defensa</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 6</p>
+                    <p class="player-position">Defensa</p>
+                </div>
+                <!-- Agrega más jugadores aquí si es necesario -->
+            </div>
+
+            <h2>Centrocampistas</h2>
+            <div class="players-section">
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 7</p>
+                    <p class="player-position">Centrocampista</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 8</p>
+                    <p class="player-position">Centrocampista</p>
+                </div>
+                <!-- Agrega más jugadores aquí si es necesario -->
+            </div>
+
+            <h2>Delanteros</h2>
+            <div class="players-section">
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 9</p>
+                    <p class="player-position">Delantero</p>
+                </div>
+                <div class="player-card">
+                    <img src="img/player-free.avif" alt="jugador">
+                    <p class="player-name">Jugador 10</p>
+                    <p class="player-position">Delantero</p>
+                </div>
+                <!-- Agrega más jugadores aquí si es necesario -->
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <h3>E1 Paiporta</h3>
+                <p>El club de fútbol más grande de la historia. Únete a nosotros y sé parte de la leyenda.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 E1 Paiporta. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
