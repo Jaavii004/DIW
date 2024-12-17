@@ -1,0 +1,128 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* CASO 1: Estructura de bloques inicial */
+.contenedor-bloques {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite el ajuste automático */
+    justify-content: space-around;
+    gap: 10px;
+    padding: 10px;
+}
+
+.bloque {
+    width: 30%;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+}
+
+.bloque {
+    max-width: 100%;
+    height: auto;
+}
+
+/* CASO 2: Media query para < 800px - Alineación vertical */
+@media (max-width: 800px) {
+    .bloque {
+        display: block;
+        width: auto;
+        margin: 20px;
+    }
+}
+
+/* CASO 3: Estructura de la página (web en cascada) */
+header,
+nav,
+main,
+aside {
+    padding: 20px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.contenedor-web {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+nav {
+    width: 20%;
+    background-color: lightblue;
+}
+
+main {
+    width: 60%;
+    background-color: lightgreen;
+}
+
+aside {
+    width: 20%;
+    background-color: lightcoral;
+}
+
+/* Media query para reorganización a cascada vertical */
+@media (max-width: 600px) {
+    .contenedor-web {
+        flex-direction: column;
+    }
+    nav, main, aside {
+        width: 100%;
+    }
+}
+
+/* CASO 4: Menú adaptable y desplegable */
+.menu {
+    display: flex;
+    list-style: none;
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.menu li {
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.menu.responsive {
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 150px;
+}
+
+.centrado {
+    text-align: center;
+}
