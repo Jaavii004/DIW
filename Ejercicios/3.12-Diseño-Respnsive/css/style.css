@@ -41,10 +41,7 @@ body {
 }
 
 /* CASO 3: Estructura de la página (web en cascada) */
-header,
-nav,
-main,
-aside {
+header, nav, main, aside {
     padding: 20px;
     border: 1px solid black;
     text-align: center;
