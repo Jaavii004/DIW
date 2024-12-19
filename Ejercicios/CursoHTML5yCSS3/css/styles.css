@@ -178,3 +178,79 @@ header img {
 }
 
 /* PRUEBAS DE ANIMACIONES */
+/* General styles for chinchetas */
+.chincheta {
+    position: absolute;
+    width: 35px;
+    height: 49px;
+    background-image: url(../imgs/chincheta.png);
+    background-size: cover;
+    left: 0px; /* Initial position */
+}
+
+/* Define keyframes for the animations */
+@keyframes mueveChincheta1 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 199px;
+    }
+}
+
+@keyframes mueveChincheta2 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 120px;
+    }
+}
+
+@keyframes mueveChincheta3 {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 30px;
+    }
+}
+
+@keyframes animArticle1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-2deg);
+    }
+}
+
+@keyframes animArticle3 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+/* Assigning the animation duration */
+.chincheta1 {
+    animation: mueveChincheta1 1s forwards;
+}
+
+.chincheta2 {
+    animation: mueveChincheta2 1s forwards;
+}
+
+.chincheta3 {
+    animation: mueveChincheta3 1s forwards;
+}
+
+.article1 {
+    animation: animArticle1 0.5s forwards;
+}
+
+.article3 {
+    animation: animArticle3 0.5s forwards;
+}
