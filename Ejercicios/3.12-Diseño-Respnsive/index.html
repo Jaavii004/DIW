@@ -7,38 +7,36 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- CASO 1: Bloques con imágenes y texto -->
     <section>
         <h1 class="centrado">CASO 1: Bloques Responsivos</h1>
         <div class="contenedor-bloques">
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 1">
-                <p>Bloque 1</p>
+                <p>Real Madrid 1</p>
             </div>
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 2">
-                <p>Bloque 2</p>
+                <p>Real Madrid 2</p>
             </div>
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 3">
-                <p>Bloque 3</p>
+                <p>Real Madrid 3</p>
             </div>
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 4">
-                <p>Bloque 4</p>
+                <p>Real Madrid 4</p>
             </div>
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 5">
-                <p>Bloque 5</p>
+                <p>Real Madrid 5</p>
             </div>
             <div class="bloque">
                 <img src="./img/real-madrid.png" alt="Real madrid 6">
-                <p>Bloque 6</p>
+                <p>Real Madrid 6</p>
             </div>
         </div>
     </section>
 
-    <!-- CASO 3: Estructura de la página web -->
     <section>
         <h1 class="centrado">CASO 3: Web en Cascada</h1>
         <div class="contenedor-web">
@@ -48,27 +46,16 @@
         </div>
     </section>
 
-    <!-- CASO 4: Menú adaptable y desplegable -->
     <section>
         <h1 class="centrado">CASO 4: Menú Adaptable</h1>
-        <div class="menu-icon" onclick="toggleMenu()">☰ Menú</div>
-        <ul class="menu" id="menu">
+        <label for="menu-toggle" class="menu-icon">☰ Menú</label>
+        <input type="checkbox" id="menu-toggle">
+        <ul class="menu">
             <li>Inicio</li>
             <li>Servicios</li>
             <li>Sobre Nosotros</li>
             <li>Contacto</li>
         </ul>
     </section>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            if (menu.className === "menu") {
-                menu.className += " responsive";
-            } else {
-                menu.className = "menu";
-            }
-        }
-    </script>
 </body>
 </html>

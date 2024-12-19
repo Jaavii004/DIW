@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptar imágenes</title>
+</head>
+
+<body>
+    <h1>Adaptar imágenes</h1>
+    <picture>
+        <source media="(max-width: 600px)" srcset="./img/globo480x420.jpg">
+        <img src="./img/globo.jpg" alt="Globo">
+    </picture>
+
+    
+    <img src="img/polilla.jpg"
+    srcset="
+    img/polilla320.jpg 320w,
+    img/polilla480.jpg 480w"
+    sizes="(max-width: 300px) 320px,
+    (max-width: 500px) 480px,
+    800px"
+    alt=" polilla">
+</body>
+
+</html>
