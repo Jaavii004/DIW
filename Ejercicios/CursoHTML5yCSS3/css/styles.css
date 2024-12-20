@@ -177,18 +177,16 @@ header img {
     }
 }
 
-/* PRUEBAS DE ANIMACIONES */
-/* General styles for chinchetas */
+/* ANIMACIONES */
 .chincheta {
     position: absolute;
     width: 35px;
     height: 49px;
     background-image: url(../imgs/chincheta.png);
     background-size: cover;
-    left: 0px; /* Initial position */
+    left: 0px;
 }
 
-/* Define keyframes for the animations */
 @keyframes mueveChincheta1 {
     from {
         left: 0px;
@@ -234,7 +232,6 @@ header img {
     }
 }
 
-/* Assigning the animation duration */
 .chincheta1 {
     animation: mueveChincheta1 1s forwards;
 }
