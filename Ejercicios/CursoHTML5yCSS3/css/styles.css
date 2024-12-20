@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(#dd5724, #f7ded3);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .container-principal {
@@ -9,6 +10,7 @@ body {
 }
 
 header {
+    font-family: "fuente1";
     border-radius: 10px 10px 0 0;
     background: linear-gradient(#0476b9, #1ca5dc);
     display: flex;
@@ -250,4 +252,71 @@ header img {
 
 .article3 {
     animation: animArticle3 0.5s forwards;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    section {
+        max-width: 40%;
+        margin-bottom: 20px;
+    }
+}
+
+@font-face {
+    font-family: "fuente1";
+    src: url("../fuentes/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+    font-family: "fuente2";
+    src: url("../fuentes/Abel/Abel-Regular.ttf");
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    #menu {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(#dbbe36, #f4db2f);
+        height: 0;
+        padding: 0;
+    }
+
+    #menu.active {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #menu-toggle {
+        display: block;
+        margin: 10px;
+    }
+
+    .marcador {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+main {
+    transition: margin-top 0.3s ease;
 }
