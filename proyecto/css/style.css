@@ -183,11 +183,11 @@ footer {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
-    width: 40%;
+    width: 45%;
     max-width: 300px;
+    min-width: 210px;
     margin: 0 auto;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .equipo {
@@ -202,20 +202,17 @@ footer {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 .vs {
     font-size: 24px;
     font-weight: bold;
-    margin: 10px 0;
-    color: #fff;
 }
 
 .fecha {
     font-size: 16px;
     margin-top: 20px;
-    color: #fff;
 }
 
 .fecha p {
@@ -309,5 +306,48 @@ header {
 
     .menu-toggle {
         display: block;
+    }
+}
+
+.equipos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.equipo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.equipo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.nombre-equipo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .equipos {
+        justify-content: center;
+    }
+
+    .equipo {
+        width: 150px;
     }
 }
