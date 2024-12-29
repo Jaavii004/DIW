@@ -309,7 +309,7 @@ header {
     }
 }
 
-.equipos {
+.equipos-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -317,7 +317,13 @@ header {
     margin-top: 30px;
 }
 
-.equipo {
+.equipo-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s ease-in-out;
+}
+
+
+.equipo-card {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -328,7 +334,7 @@ header {
     margin: 10px;
 }
 
-.equipo img {
+.equipo-card img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -343,11 +349,16 @@ header {
 }
 
 @media (max-width: 768px) {
-    .equipos {
+    .equipos-cards {
         justify-content: center;
     }
 
-    .equipo {
+    .equipo-card {
         width: 150px;
+    }
+
+    .equipo-card img {
+        width: 150px;
+        height: 150px;
     }
 }
