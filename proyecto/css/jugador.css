@@ -1,0 +1,155 @@
+.jugador-detalle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50vh;
+}
+
+.jugador-info {
+    flex: 1;
+    font-size: 18px;
+    color: #fff;
+    padding-right: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.jugador-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.jugador-foto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jugador-foto img {
+    width: 170px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.estadisticas {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.caja-estadistica {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.caja-estadistica p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #66abf0;
+}
+
+.caja-estadistica span {
+    font-size: 1rem;
+    color: #757575;
+}
+
+.numero {
+    font-size: 4rem;
+    color: #66abf0;
+}
+
+.detalles-jugador {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
+
+.datos-personales h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.datos-personales ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.datos-personales strong {
+    font-weight: bold;
+    color: #66abf0;
+}
+
+.espacio-separador {
+    margin-top: 3rem;
+}
+
+.linea-del-tiempo {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    background-color: #66abf0;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: left;
+}
+
+.timeline h3 {
+    font-size: 1.2rem;
+    color: #66abf0;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #66abf0;
+}
