@@ -15,7 +15,6 @@
     font-size: 18px;
     color: #fff;
     padding-right: 20px;
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,26 +101,21 @@
     margin-top: 3rem;
 }
 
-.linea-del-tiempo {
-    margin-top: 3rem;
-    text-align: center;
-}
-
-.timeline {
+.trayectoria {
     position: relative;
     padding: 20px;
     margin: 0 auto;
     max-width: 450px;
 }
 
-.timeline-item {
+.trayectoria-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     position: relative;
 }
 
-.timeline-point {
+.trayectoria-point {
     width: 20px;
     height: 20px;
     background-color: #66abf0;
@@ -130,7 +124,7 @@
     left: -30px;
 }
 
-.timeline-content {
+.trayectoria-content {
     background-color: #fff;
     padding: 10px;
     border-radius: 8px;
@@ -139,12 +133,12 @@
     text-align: left;
 }
 
-.timeline h3 {
+.trayectoria h3 {
     font-size: 1.2rem;
     color: #66abf0;
 }
 
-.timeline:before {
+.trayectoria:before {
     content: '';
     position: absolute;
     left: 0;
