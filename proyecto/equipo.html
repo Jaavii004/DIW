@@ -3,9 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta nombre="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E1 Paiporta</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         .jugadores-section {
             display: flex;
@@ -23,14 +26,14 @@
             overflow: hidden;
             text-align: center;
             padding: 20px;
-            width: 150px;
+            max-width: 190px;
             transition: transform 0.3s ease-in-out;
             margin-bottom: 20px;
         }
 
         .jugador-card img {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
             border-radius: 50%;
         }
@@ -38,7 +41,6 @@
         .jugador-nombre {
             font-size: 16px;
             font-weight: bold;
-            margin-top: 10px;
         }
 
         .jugador-posicion {
@@ -49,23 +51,36 @@
         .jugador-card:hover {
             transform: scale(1.05);
         }
+
+        .numero {
+            font-size: 30px;
+            color: #66abf0;
+            margin-right: 5px;
+        }
     </style>
 </head>
 
 <body>
     <div class="contenedor">
         <header>
-            <div class="logo"><img src="./img/logo.png" class="logo-pequeño" alt=""> E1 Paiporta</div>
+            <div class="logo"><img src="./img/logo.png" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA"> 
+                C.F. E1 PAIPORTA
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </label>
             <div class="nav-enlaces">
+                <a href="#" class="nav-enlace">Inicio</a>
                 <a href="#" class="nav-enlace">Equipos</a>
                 <a href="#" class="nav-enlace">Entrenadores</a>
-                <a href="#" class="nav-enlace">Sobre nosotros</a>
+                <a href="#" class="nav-enlace">Sobre Nosotros</a>
             </div>
         </header>
 
         <section>
             <div class="img-cabezera">
-                <div class="titulo-img-cabezera"> Alevin Preferente</div>
+                <div class="titulo-img-cabezera">Castilla</div>
             </div>
             <hr class="separador">
         </section>
@@ -74,64 +89,64 @@
             <h2>Porteros</h2>
             <div class="jugadores-section">
                 <div class="jugador-card">
-                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--b4e862ec-ae06-4558-b5df-e8c1ff04260a/FRAN_GONZALEZ_JT18471.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Fran</p>
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--2b5b3b3f-d264-4b88-a686-7f3ffcf5acca/_80x501____9.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
+                    <p class="jugador-nombre"><span class="numero">1</span> Courtois</p>
                     <p class="jugador-posicion">Portero</p>
                 </div>
                 <div class="jugador-card">
                     <img src="https://www.fcbarcelona.com/photo-resources/2024/10/13/04c3b761-ccbd-498f-b988-b67ed1693906/01-Ter_Stegen-M.png?width=670&height=790" alt="jugador">
-                    <p class="jugador-nombre">Ter Statuen</p>
+                    <p class="jugador-nombre"><span class="numero">13</span> Ter Statuen</p>
                     <p class="jugador-posicion">Portero</p>
                 </div>
             </div>
-
+        
             <h2>Defensa</h2>
             <div class="jugadores-section">
                 <div class="jugador-card">
                     <img src="img/carvajal.webp" alt="jugador">
-                    <p class="jugador-nombre">Carvajal</p>
+                    <p class="jugador-nombre"><span class="numero">2</span> Carvajal</p>
                     <p class="jugador-posicion">Defensa</p>
                 </div>
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--4e96c161-3f21-49f0-a4ed-47e4a8d00cb7/_80x501____12.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">GOAT</p>
+                    <p class="jugador-nombre"><span class="numero">99</span> GOAT</p>
                     <p class="jugador-posicion">Defensa</p>
                 </div>
             </div>
-
+        
             <h2>Centrocampistas</h2>
             <div class="jugadores-section">
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--8ba509c1-e4b0-4a65-bba3-9ef55d226e2c/_80x501____17.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Jude Bellingham</p>
+                    <p class="jugador-nombre"><span class="numero">5</span> Jude Bellingham</p>
                     <p class="jugador-posicion">Centrocampista</p>
                 </div>
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--9b44593c-efb6-4349-9c40-93b47b2d61fd/_80x501____1.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Modrić</p>
+                    <p class="jugador-nombre"><span class="numero">10</span> Modrić</p>
                     <p class="jugador-posicion">Centrocampista</p>
                 </div>
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--4389d68f-5db7-4ed4-96f3-53edec3d6a89/_80x501_.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Valverde</p>
+                    <p class="jugador-nombre"><span class="numero">15</span> Valverde</p>
                     <p class="jugador-posicion">Centrocampista</p>
                 </div>
             </div>
-
+        
             <h2>Delanteros</h2>
             <div class="jugadores-section">
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--5162906e-de3e-4e4d-9d8a-bde223cc2519/_80x501____16.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Brahim</p>
+                    <p class="jugador-nombre"><span class="numero">11</span> Brahim</p>
                     <p class="jugador-posicion">Delantero</p>
                 </div>
                 <div class="jugador-card">
                     <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--a97407da-37f5-4010-9dde-c3cd85827c11/_80x501____6.app.webp?preferwebp=true&width=288&height=384" alt="jugador">
-                    <p class="jugador-nombre">Vini Jr.</p>
+                    <p class="jugador-nombre"><span class="numero">7</span> Vini Jr.</p>
                     <p class="jugador-posicion">Delantero</p>
                 </div>
             </div>
-
+        
             <h2>Cuerpo Técnico</h2>
             <div class="jugadores-section">
                 <div class="jugador-card">
@@ -145,7 +160,7 @@
                     <p class="jugador-posicion">Recoge pelotas y conductor del Tuc-Tuc</p>
                 </div>
             </div>
-        </section>
+        </section>        
 
         <footer>
             <nav class="footer-nav">
