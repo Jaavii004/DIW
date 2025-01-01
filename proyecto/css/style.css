@@ -11,6 +11,23 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: 10px;
+    margin-top: 70px;
+}
+
+.migas-de-pan {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.migas-de-pan a {
+    text-decoration: none;
+    color: #66abf0;
+}
+
+.migas-de-pan a:hover {
+    color: #333;
 }
 
 .img-cabezera {
@@ -297,9 +314,7 @@ header {
     z-index: 100; 
 }
 
-.contenedor {
-    margin-top: 80px; /* Evita que el contenido quede cubierto por el navbar */
-}
+
 
 .menu-desplegable-checkbox {
     display: none;
@@ -439,5 +454,37 @@ aside {
 
 .img-menu {
     width: 40%;
-    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #66abf0;
+    outline: none;
 }
