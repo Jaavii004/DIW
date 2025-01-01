@@ -300,11 +300,11 @@ header {
     margin-top: 80px; /* Evita que el contenido quede cubierto por el navbar */
 }
 
-.menu-toggle-checkbox {
+.menu-desplegable-checkbox {
     display: none;
 }
 
-.menu-toggle {
+.menu-desplegable {
     margin-right: 15px;
     display: none;
     background: none;
@@ -328,11 +328,11 @@ header {
         z-index: 1000;
     }
 
-    .menu-toggle-checkbox:checked + .menu-toggle + .nav-enlaces {
+    .menu-desplegable-checkbox:checked + .menu-desplegable + .nav-enlaces {
         display: flex;
     }
 
-    .menu-toggle {
+    .menu-desplegable {
         display: block;
     }
 }
@@ -405,7 +405,7 @@ header {
     animation: botar 2s ease-in-out infinite;
 }
 
-.toggle-checkbox {
+.desplegable-checkbox {
     display: none;
 }
 
@@ -457,7 +457,7 @@ header {
     display: block;
 }
 
-.toggle-checkbox:checked ~ .aside-derecha {
+.desplegable-checkbox:checked ~ .aside-derecha {
     display: block;
     opacity: 1;
 }
