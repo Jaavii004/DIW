@@ -131,13 +131,73 @@ body {
 }
 
 footer {
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
     margin-top: 40px;
 }
 
-.footer-nav a {
-    text-decoration: none;
-    color: #333;
+.footer-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    position: relative;
+    padding: 20px 0;
 }
+
+.footer-redes, .footer-contacto {
+    text-align: left;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-redes {
+    text-align: left;
+}
+
+.footer-contacto {
+    text-align: right;
+}
+
+.footer-logo {
+    text-align: center;
+    flex: 0 0 auto;
+    margin: 0 auto;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.footer-redes h4, .footer-contacto h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #66abf0;
+}
+
+.footer-redes .redes-sociales {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-contacto p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-derechos {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #999;
+}
+
 
 .logo {
     font-size: 20px;
@@ -314,8 +374,6 @@ header {
     z-index: 100; 
 }
 
-
-
 .menu-desplegable-checkbox {
     display: none;
 }
@@ -366,7 +424,6 @@ header {
     transition: transform 0.8s ease-in-out;
 }
 
-
 .equipo-card {
     background-color: #fff;
     padding: 20px;
@@ -398,7 +455,8 @@ header {
     }
 
     .equipo-card {
-        width: 150px;
+        width: 160px;
+        height: 210px;
     }
 
     .equipo-card img {
