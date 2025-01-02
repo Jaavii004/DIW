@@ -215,7 +215,7 @@ footer {
 .nav-enlace {
     position: relative;
     text-decoration: none;
-    color: #333;
+    color: #ffff;
     display: inline-block;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -366,7 +366,9 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 0px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #004489;
+    border-radius: 5px;
+    color: #ffff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
@@ -400,6 +402,10 @@ header {
         padding: 10px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         z-index: 1000;
+    }
+
+    .nav-enlace {
+        color: #000;
     }
 
     .menu-desplegable-checkbox:checked + .menu-desplegable + .nav-enlaces {
@@ -511,7 +517,10 @@ aside {
 }
 
 .img-menu {
-    width: 40%;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
 }
 
 form {
@@ -546,3 +555,8 @@ input:focus, textarea:focus {
     border-color: #66abf0;
     outline: none;
 }
+
+
+
+
+
