@@ -131,7 +131,8 @@ body {
 }
 
 footer {
-    color: #333;
+    background-color: #004489;
+    color: #ffff;
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
@@ -161,6 +162,8 @@ footer {
 
 .footer-contacto {
     text-align: right;
+    
+    text-decoration: none;
 }
 
 .footer-logo {
@@ -185,14 +188,17 @@ footer {
     gap: 10px;
 }
 
+.redes-sociales a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .footer-contacto p {
     margin: 5px 0;
     font-size: 14px;
 }
 
 .footer-derechos {
-    margin-top: 20px;
-    border-top: 1px solid #444;
     padding-top: 10px;
     font-size: 14px;
     color: #999;
@@ -271,6 +277,10 @@ footer {
     font-weight: bold;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.seccion-noticias .titulo-seccion {
+    color:#004489;
 }
 
 .partido {
@@ -367,7 +377,6 @@ header {
     width: 100%;
     padding: 20px 0px;
     background-color: #004489;
-    border-radius: 5px;
     color: #ffff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -556,7 +565,8 @@ input:focus, textarea:focus {
     outline: none;
 }
 
-
-
-
+.texto-negro {
+    color: #000;
+    line-height: 1.4;
+}
 
