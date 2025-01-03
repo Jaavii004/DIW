@@ -279,8 +279,12 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.seccion-noticias .titulo-seccion {
+.seccion-noticias, aside .titulo-seccion {
     color:#004489;
+}
+
+.centrado {
+    text-align: center;
 }
 
 .partido {
@@ -497,9 +501,13 @@ header {
 .contenido-principal {
     display: flex;
     gap: 20px;
-    margin: 20px;
+    margin: 20px auto;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1700px;
 }
+
 
 aside {
     flex: 1;
