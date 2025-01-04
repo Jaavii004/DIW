@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body {
     margin: 0;
     padding: 0;
@@ -193,6 +194,11 @@ footer {
     color: #fff;
 }
 
+.blanco-sinest {
+    text-decoration: none;
+    color: #fff;
+}
+
 .footer-contacto p {
     margin: 5px 0;
     font-size: 14px;
@@ -244,6 +250,10 @@ footer {
 
 .nav-enlace:hover {
     color: #66abf0;
+}
+
+.nav-enlace:nth-child(odd) {
+    color: #bdbdbd;
 }
 
 .logo-pequeño {
@@ -450,8 +460,12 @@ header {
     width: 300px;
     height: 300px;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px hsla(0, 0%, 0%, 0.1);
     margin: 10px;
+    /* dejamos espacio en el borde */
+    border: 10px solid transparent;
+    /* Ponemos la img de borde */
+    border-image: url('../img/fondo.avif') 30 round;
 }
 
 .equipo-card img {
@@ -508,7 +522,6 @@ header {
     max-width: 1700px;
 }
 
-
 aside {
     flex: 1;
     border-radius: 8px;
@@ -548,11 +561,15 @@ aside {
     float: left;
     margin-right: 10px;
 }
-
+/* Estilos base del formulario */
 form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 20px;
+    background: linear-gradient(to right, #f9f9f9, #eaeaea);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .campo {
@@ -564,7 +581,8 @@ form {
 label {
     font-size: 14px;
     margin-bottom: 5px;
-    color: #666;
+    color: #444;
+    font-weight: bold;
 }
 
 input, textarea {
@@ -574,15 +592,62 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Estados de validación */
 input:focus, textarea:focus {
     border-color: #66abf0;
+    background-color: #eef7ff;
     outline: none;
+}
+
+input:valid, textarea:valid {
+    border-color: #28a745;
+}
+
+input:invalid, textarea:invalid {
+    border-color: #dc3545;
+    background-color: #f9d6d5;
+}
+
+.campo label::after {
+    content: '*';
+    color: #dc3545;
+    margin-left: 5px;
+}
+
+input:required {
+    border-color: #dc3545;
 }
 
 .texto-negro {
     color: #000;
     line-height: 1.4;
+}
+
+.submenu {
+    position: relative;
+}
+.submenu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #004489;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10000;
+}
+
+.submenu-enlace {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.submenu:hover .submenu-items {
+    display: block;
 }

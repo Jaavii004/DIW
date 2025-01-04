@@ -1,112 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Estilo - C.F. E1 PAIPORTA</title>
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Sección Estilos */
-        .seccion-estilos {
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-        }
-
-        .titulo-estilos {
-            font-size: 28px;
-            font-weight: bold;
-            color: #004489;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .estilos-lista {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            align-items: center;
-
-        }
-
-        .estilo-item {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .estilo-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .color-box {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .estilo-item p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* Diseño de tarjetas sin listas */
-        .tarjeta {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .tarjeta h3 {
-            font-size: 22px;
-            font-weight: bold;
-            color: #004489;
-            margin-bottom: 10px;
-        }
-
-        .tarjeta p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .tarjeta .color-box {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-            border-radius: 50%;
-        }
-
-        .tarjeta .texto {
-            color: #999;
-            font-size: 14px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
     <div class="contenedor">
         <div class="migas-de-pan">
-            <a href="index.html">Inicio</a>
+            <a href="index.html">Inicio</a> >
+            <a href="estilos.html">Estilos</a>
         </div>
         <header>
-            <div class="logo"><img src="./img/logo.png" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA"> 
-                C.F. E1 PAIPORTA
-            </div>
+            <a class="blanco-sinest" href="index.html">
+                <div class="logo"><img src="./img/logo.svg" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA">
+                    C.F. E1 PAIPORTA
+                </div>
+            </a>
             <input type="checkbox" id="menu-desplegable" class="menu-desplegable-checkbox">
             <label for="menu-desplegable" class="menu-desplegable">
                 <img class="img-menu" src="img/menu.png" alt="">
@@ -114,7 +29,13 @@
             <div class="nav-enlaces">
                 <a href="index.html" class="nav-enlace">Inicio</a>
                 <a href="equipos.html" class="nav-enlace">Equipos</a>
-                <a href="jugador.html" class="nav-enlace">Jugador</a>
+                <div class="submenu">
+                    <a href="jugador.html" class="nav-enlace">Equipo</a>
+                    <div class="submenu-items">
+                        <a href="equipo.html" class="nav-enlace submenu-enlace">Castilla</a>
+                        <a href="jugador.html" class="nav-enlace submenu-enlace">Carvajal</a>
+                    </div>
+                </div>
                 <a href="contacto.html" class="nav-enlace">Contacto</a>
             </div>
         </header>
@@ -126,71 +47,73 @@
             <hr class="separador">
         </section>
 
-        <section class="seccion-estilos">
+        <section>
             <h2 class="titulo-estilos">Colores</h2>
             <div class="estilos-lista">
                 <div class="tarjeta">
                     <div class="color-box" style="background-color: #004489;"></div>
                     <h3>Azul Oscuro</h3>
-                    <p>Representa el profesionalismo.</p>
+                    <p>Profesional y color del club.</p>
                     <p class="texto">#004489</p>
                 </div>
                 <div class="tarjeta">
                     <div class="color-box" style="background-color: #66abf0;"></div>
                     <h3>Azul Claro</h3>
-                    <p>Moderno y fresco.</p>
+                    <p>Color claro tambien del club.</p>
                     <p class="texto">#66abf0</p>
                 </div>
-                <div class="tarjeta">
-                    <div class="color-box" style="background-color: #ffffff;"></div>
-                    <h3>Blanco</h3>
-                    <p>Mejora la legibilidad.</p>
-                    <p class="texto">#ffffff</p>
-                </div>
-                <div class="tarjeta">
-                    <div class="color-box" style="background-color: #f5f5f5;"></div>
-                    <h3>Gris Claro</h3>
-                    <p>Para fondos secundarios.</p>
-                    <p class="texto">#f5f5f5</p>
-                </div>
             </div>
-        
+
             <h2 class="titulo-estilos">Tipografía</h2>
             <div class="tarjeta">
                 <h3>Roboto Regular</h3>
-                <p>Cuerpo del texto (16px).</p>
+                <p>Letra para toda la pagina.</p>
             </div>
-        
+
             <h2 class="titulo-estilos">Iconos</h2>
             <div class="tarjeta">
                 <h3>Estilo</h3>
                 <p>Minimalista y geométrico.</p>
             </div>
-            <div class="tarjeta">
-                <h3>Tamaño</h3>
-                <p>24px (hasta 32px para botones).</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Color</h3>
-                <p>Gris oscuro, cambia a azul claro al interactuar.</p>
-            </div>
-        
+
             <h2 class="titulo-estilos">Botones</h2>
             <div class="tarjeta">
                 <h3>Principales</h3>
-                <p>Azul claro con texto blanco, cambia a azul oscuro al pasar el ratón.</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Secundarios</h3>
-                <p>Fondo blanco, borde azul oscuro, cambia a azul claro al pasar el ratón.</p>
+                <p>Fondo blanco que cuando pasas el ratón se vuelve negro y la letra en blanco</p>
             </div>
         </section>
-        
+
+
+        <footer>
+            <div class="footer-contenido">
+                <div class="footer-redes">
+                    <h4>Síguenos</h4>
+                    <div class="redes-sociales">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-logo">
+                    <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
+                    <p>C.F. E1 PAIPORTA</p>
+                </div>
+                <div class="footer-contacto">
+                    <h4>Contáctanos</h4>
+                    <p>Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia</p>
+                    <p>Email: contacto@cfpaioporta.com</p>
+                    <p>Tel: +34 640 27 58 34</p>
+                </div>
+            </div>
+            <div class="footer-derechos">
+                <hr class="separador">
+                <p>© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
+                <p class="redes-sociales"><a href="estilos.html">Guía de Estilo</a></p>
+            </div>
+        </footer>
+
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
-    </footer>
 
 </body>
+
 </html>

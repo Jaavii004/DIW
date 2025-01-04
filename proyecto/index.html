@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C.F. E1 PAIPORTA</title>
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" href="img/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,9 +16,11 @@
             <a href="index.html">Inicio</a>
         </div>
         <header>
-            <div class="logo"><img src="./img/logo.png" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA"> 
-                C.F. E1 PAIPORTA
-            </div>
+            <a class="blanco-sinest" href="index.html">
+                <div class="logo"><img src="./img/logo.svg" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA"> 
+                    C.F. E1 PAIPORTA
+                </div>
+            </a>
             <input type="checkbox" id="menu-desplegable" class="menu-desplegable-checkbox">
             <label for="menu-desplegable" class="menu-desplegable">
                 <img class="img-menu" src="img/menu.png" alt="">
@@ -27,7 +28,13 @@
             <div class="nav-enlaces">
                 <a href="index.html" class="nav-enlace">Inicio</a>
                 <a href="equipos.html" class="nav-enlace">Equipos</a>
-                <a href="jugador.html" class="nav-enlace">Jugador</a>
+                <div class="submenu">
+                    <a href="jugador.html" class="nav-enlace">Equipo</a>
+                    <div class="submenu-items">
+                        <a href="equipo.html" class="nav-enlace submenu-enlace">Castilla</a>
+                        <a href="jugador.html" class="nav-enlace submenu-enlace">Carvajal</a>
+                    </div>
+                </div>
                 <a href="contacto.html" class="nav-enlace">Contacto</a>
             </div>
         </header>
@@ -99,7 +106,7 @@
                             <p>El equipo logró una importante victoria en casa con un marcador de 3-1 contra el equipo rival...</p>
                         </div>
                         <div class="logo-club">
-                            <img src="img/logo.png" alt="Logo C.F. E1 PAIPORTA">
+                            <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
                         </div>
                     </div>
                     <div class="noticia">
@@ -108,7 +115,7 @@
                             <p>El C.F. E1 PAIPORTA ha cerrado el fichaje de David Ruiz...</p>
                         </div>
                         <div class="logo-club">
-                            <img src="img/logo.png" alt="Logo C.F. E1 PAIPORTA">
+                            <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
                         </div>
                     </div>
                 </div>
@@ -125,7 +132,7 @@
                 </ul>
                 <h3>Celebración con nuestros fans</h3>
                 <video controls class="video-aside">
-                    <source src="img/fans_cibeles.mp4" type="video/mp4">
+                    <source src="video/fans_cibeles.mp4" type="video/mp4">
                     Tu navegador no soporta la etiqueta de video.
                 </video>
                 <audio controls class="audio-aside">
@@ -145,7 +152,7 @@
                     </div>
                 </div>
                 <div class="footer-logo">
-                    <img src="img/logo.png" alt="Logo C.F. E1 PAIPORTA">
+                    <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
                     <p>C.F. E1 PAIPORTA</p>
                 </div>
                 <div class="footer-contacto">
@@ -158,6 +165,7 @@
             <div class="footer-derechos">
                 <hr class="separador">
                 <p>© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
+                <p class="redes-sociales" ><a href="estilos.html">Guía de Estilo</a></p>
             </div>
         </footer>
         
