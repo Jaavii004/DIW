@@ -592,14 +592,9 @@ input, textarea {
 }
 
 /* Estados de validación */
-input:focus, textarea:focus {
-    border-color: #66abf0;
-    background-color: #eef7ff;
-    outline: none;
-}
-
 input:valid, textarea:valid {
     border-color: #28a745;
+    background-color: #d4edda;
 }
 
 input:invalid, textarea:invalid {
@@ -613,8 +608,8 @@ input:invalid, textarea:invalid {
     margin-left: 5px;
 }
 
-input:required {
-    border-color: #dc3545;
+input:required, textarea:required {
+    border-color: #fffb00;
 }
 
 .texto-negro {
