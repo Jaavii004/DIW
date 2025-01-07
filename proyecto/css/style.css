@@ -261,7 +261,7 @@ footer {
 /* PARTIDOS */
 
 .seccion-partido {
-    background-image: url('../img/campo-futbol-visto-arriba_94189-75.png');
+    background-image: url('../img/campo-futbol-visto-arriba_94189-75.webp');
     background-size: cover;
     background-position: center;
     padding: 40px 20px;
@@ -592,24 +592,24 @@ input, textarea {
 }
 
 /* Estados de validación */
+
+input:required, textarea:required {
+    background-image: url("../img/required.webp");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
 input:valid, textarea:valid {
+    background-image: url("../img/valid.webp");
     border-color: #28a745;
     background-color: #d4edda;
 }
 
-input:invalid, textarea:invalid {
+input:focus:invalid, textarea:focus:invalid {
+    background-image: url("../img/invalid.webp");
     border-color: #dc3545;
     background-color: #f9d6d5;
-}
-
-.campo label::after {
-    content: '*';
-    color: #dc3545;
-    margin-left: 5px;
-}
-
-input:required, textarea:required {
-    border-color: #fffb00;
 }
 
 .texto-negro {
