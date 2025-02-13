@@ -2,130 +2,110 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap GRID Ordenar</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    /* Estilos generales para las cajas */
-    .box, .box-gris, .emoji {
-      text-align: center;
-      padding: 40px;
-      border: 1px solid black;
-      font-size: 1.5rem;
-    }
+    <meta charset="UTF-8" />
+    <title>Ejemplo Bootstrap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        * {
+            text-align: center;
+        }
 
-    .header, .footer {
-      background: green;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
+        /* Añadir altura a las cajas */
+        .bg-primary,
+        .bg-secondary,
+        .bg-info,
+        .bg-warning,
+        .bg-success {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .section {
-      background: rgb(150, 223, 233);
-      text-align: center;
-      padding: 10px;
-    }
+        .header {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
 
-    /* Diferentes colores y fondos para las cajas */
-    .box {
-      background: rgb(117, 148, 184);
-    }
+        .box {
+            background: rgb(117, 148, 184);
+            color: white;
+            padding: 40px;
+            border: 1px solid black;
+            font-size: 1.5rem;
+        }
 
-    .box-gris {
-      background: rgb(167, 168, 170);
-    }
+        .box-gris {
+            background: rgb(167, 168, 170);
+            color: white;
+            padding: 40px;
+            border: 1px solid black;
+            font-size: 1.5rem;
+        }
 
-    .emoji {
-      background: orange;
-    }
-  </style>
+        .emoji {
+            background: orange;
+            color: white;
+            padding: 40px;
+            border: 1px solid black;
+            font-size: 1.5rem;
+        }
+
+        .section {
+            background: rgb(150, 223, 233);
+            padding: 10px;
+        }
+
+        .footer {
+            background: green;
+            color: white;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="row">
-      <div class="col-12 header">Header</div>
-    </div>
+    <div class="container">
+        <!-- Header -->
+        <div class="row">
+            <div class="col-12 header">Header</div>
+        </div>
 
-    <!-- Diseño para pantallas grandes (md y lg) -->
-    <div class="d-none d-md-block">
-      <div class="row text-center">
-        <div class="col-md-2 offset-md-4 box">1</div>
-        <div class="col-md-2 box">2</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-2 box">3</div>
-        <div class="col-md-8"></div>
-        <div class="col-md-2 box">4</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-3 box-gris">d</div>
-        <div class="col-md-3 box-gris">c</div>
-        <div class="col-md-3 box-gris">b</div>
-        <div class="col-md-3 box-gris">a</div>
-      </div>
-      <div class="row section">
-        <div class="col-12">Desktop</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-6 emoji order-md-1">:(</div>
-        <div class="col-md-6 emoji order-md-2">:D</div>
-      </div>
-    </div>
+        <div class="row mt-3">
+            <div class="col-6 col-sm-3 col-md-3 offset-md-3 box">1</div>
+            <div class="col-6 col-sm-3 col-md-3 box">2</div>
+            <div class="w-100 d-none d-md-block"></div>
+            <div class="col-6 col-sm-3 col-md-3 box">3</div>
+            <div class="col-6 col-sm-3 col-md-3 offset-md-6 box">4</div>
+        </div>
 
-    <!-- Diseño para pantallas medianas (sm) -->
-    <div class="d-none d-sm-block d-md-none">
-      <div class="row text-center">
-        <div class="col-sm-3 box">1</div>
-        <div class="col-sm-3 box">2</div>
-        <div class="col-sm-3 box">3</div>
-        <div class="col-sm-3 box">4</div>
-      </div>
-      <div class="row section">
-        <div class="col-12">Tablet</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-sm-3 box">a</div>
-        <div class="col-sm-3 box">b</div>
-        <div class="col-sm-3 box">c</div>
-        <div class="col-sm-3 box">d</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-sm-6 emoji">:D</div>
-        <div class="col-sm-6 emoji">:(</div>
-      </div>
-    </div>
+        <div class="row mt-3">
+            <div class="col-6 col-md order-md-2 box-gris">a</div>
+            <div class="col-6 col-md order-md-1 box-gris">b</div>
+            <div class="col-6 col-md order-md-4 box-gris">c</div>
+            <div class="col-6 col-md order-md-3 box-gris">d</div>
+        </div>
 
-    <!-- Diseño para pantallas pequeñas (xs) -->
-    <div class="d-block d-sm-none">
-      <div class="row text-center">
-        <div class="col-6 box">1</div>
-        <div class="col-6 box">2</div>
-        <div class="col-6 box">3</div>
-        <div class="col-6 box">4</div>
-      </div>
-      <div class="row section">
-        <div class="col-12">Mobile</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-6 box">a</div>
-        <div class="col-6 box">b</div>
-        <div class="col-6 box">c</div>
-        <div class="col-6 box">d</div>
-      </div>
-      <div class="row text-center">
-        <div class="col-12 emoji">:D</div>
-      </div>
-    </div>
+        <div class="row d-none d-md-block mt-3">
+            <div class="col-12 section">Desktop</div>
+        </div>
+        <div class="row d-none d-sm-block d-md-none mt-3">
+            <div class="col-12 section">Tablet</div>
+        </div>
+        <div class="row d-block d-sm-none mt-3">
+            <div class="col-12 section">Mobile</div>
+        </div>
 
-    <!-- Footer -->
-    <div class="row">
-      <div class="col-12 footer">Footer</div>
+        <div class="row mt-3 justify-content-center ">
+            <div class="col-12 col-sm-6 col-md-3 order-md-2 emoji">:D</div>
+            <div class="col-12 col-sm-6 col-md-3 order-md-1 emoji d-none d-sm-block">:(</div>
+        </div>
+
+        <div class="row mt-3 d-none d-sm-flex">
+            <div class="col-12 footer">Footer</div>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>

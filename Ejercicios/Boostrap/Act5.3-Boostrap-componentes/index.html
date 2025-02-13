@@ -7,6 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -43,7 +50,8 @@
 
         <h4>Menú Desplegable Básico</h4>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Menú Desplegable
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -55,7 +63,8 @@
 
         <h4>Menú Desplegable Vertical</h4>
         <div class="dropdown">
-            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButtonVertical" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButtonVertical"
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Menú Vertical
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonVertical">
@@ -67,16 +76,19 @@
 
         <!-- Sección de Tarjetas -->
         <h2 class="mt-5">Tarjetas de Bootstrap</h2>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" style="max-width: 300px;">
             <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./madrid.webp" class="img-fluid rounded-start" alt="Imagen noticia">
+                <div class="col-md-4 d-flex justify-content-center align-items-center">
+                    <img src="./img/LogoValenciaBasket.webp" class="img-fluid rounded-start" alt="Imagen noticia"
+                        style="max-width: 100%; height: auto;">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">Noticia València Bàsquet</h5>
                         <h6 class="card-subtitle mb-2 text-muted">València Bàsquet ganó el partido</h6>
-                        <p class="card-text">En un emocionante partido, València Bàsquet logró la victoria en los últimos minutos gracias a un triple de última hora de su estrella, que dejó a los aficionados en shock. Este triunfo consolida al equipo como líder en la liga.</p>
+                        <p class="card-text">En un emocionante partido, València Bàsquet logró la victoria en los
+                            últimos minutos gracias a un triple de última hora de su estrella, que dejó a los
+                            aficionados en shock. Este triunfo consolida al equipo como líder en la liga.</p>
                         <a href="#" class="btn btn-primary">Leer más</a>
                     </div>
                     <div class="card-footer text-muted">Febrero 2025</div>
@@ -87,30 +99,36 @@
         <h4>Grupo de Tarjetas (3 Noticias)</h4>
         <div class="card-group">
             <div class="card">
-                <img src="./unnamed.webp" class="card-img-top" alt="Imagen noticia 1">
+                <img src="./img/vlctot.webp" class="card-img-top" alt="Imagen noticia 1">
                 <div class="card-body">
                     <h5 class="card-title">Noticia 1</h5>
-                    <p class="card-text">En la final de la Copa de Europa, el equipo nacional de baloncesto logró la victoria en un partido muy reñido. Este triunfo les otorga su primer título internacional en más de 20 años.</p>
+                    <p class="card-text">En la final de la Copa de Europa, el equipo nacional de baloncesto logró la
+                        victoria en un partido muy reñido. Este triunfo les otorga su primer título internacional en más
+                        de 20 años.</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Febrero 2025</small>
                 </div>
             </div>
             <div class="card">
-                <img src="./ND_SUPERCOPA_EUROPA_ONCE_AV25507.webp" class="card-img-top" alt="Imagen noticia 2">
+                <img src="./img/vlcfem.webp" class="card-img-top" alt="Imagen noticia 2">
                 <div class="card-body">
                     <h5 class="card-title">Noticia 2</h5>
-                    <p class="card-text">La selección femenina de baloncesto ha conseguido el primer lugar en el torneo de la Eurocopa, marcando un hito para el deporte en el país. Las jugadoras están celebrando esta histórica victoria.</p>
+                    <p class="card-text">La selección femenina de baloncesto ha conseguido el primer lugar en el torneo
+                        de la Eurocopa, marcando un hito para el deporte en el país. Las jugadoras están celebrando esta
+                        histórica victoria.</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Febrero 2025</small>
                 </div>
             </div>
             <div class="card">
-                <img src="./GettyImages-2196009661.jpg.webp" class="card-img-top" alt="Imagen noticia 3">
+                <img src="./img/vlcm.webp" class="card-img-top" alt="Imagen noticia 3">
                 <div class="card-body">
                     <h5 class="card-title">Noticia 3</h5>
-                    <p class="card-text">El legendario jugador de baloncesto, quien acaba de retirarse, ha sido nombrado presidente de la liga nacional. Con su amplia experiencia, se espera que impulse el desarrollo del baloncesto en el país.</p>
+                    <p class="card-text">El legendario jugador de baloncesto, quien acaba de retirarse, ha sido nombrado
+                        presidente de la liga nacional. Con su amplia experiencia, se espera que impulse el desarrollo
+                        del baloncesto en el país.</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Febrero 2025</small>
@@ -123,32 +141,40 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./GettyImages-2196009661.jpg.webp" class="d-block w-100" alt="Noticia 1">
+                    <img src="./img/vlcfem.webp" class="d-block w-100" alt="Noticia 1">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Noticia 1</h5>
-                        <p>En la final de la Copa de Europa, el equipo nacional de baloncesto logró la victoria en un partido muy reñido. Este triunfo les otorga su primer título internacional en más de 20 años.</p>
+                        <p>En la final de la Copa de Europa, el equipo nacional de baloncesto logró la victoria en un
+                            partido muy reñido. Este triunfo les otorga su primer título internacional en más de 20
+                            años.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./ND_SUPERCOPA_EUROPA_ONCE_AV25507.webp" class="d-block w-100" alt="Noticia 2">
+                    <img src="./img/vlcm.webp" class="d-block w-100" alt="Noticia 2">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Noticia 2</h5>
-                        <p>La selección femenina de baloncesto ha conseguido el primer lugar en el torneo de la Eurocopa, marcando un hito para el deporte en el país. Las jugadoras están celebrando esta histórica victoria.</p>
+                        <p>La selección femenina de baloncesto ha conseguido el primer lugar en el torneo de la
+                            Eurocopa, marcando un hito para el deporte en el país. Las jugadoras están celebrando esta
+                            histórica victoria.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="./unnamed.webp" class="d-block w-100" alt="Noticia 3">
+                    <img src="./img/vlctot.webp" class="d-block w-100" alt="Noticia 3">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Noticia 3</h5>
-                        <p>El legendario jugador de baloncesto, quien acaba de retirarse, ha sido nombrado presidente de la liga nacional. Con su amplia experiencia, se espera que impulse el desarrollo del baloncesto en el país.</p>
+                        <p>El legendario jugador de baloncesto, quien acaba de retirarse, ha sido nombrado presidente de
+                            la liga nacional. Con su amplia experiencia, se espera que impulse el desarrollo del
+                            baloncesto en el país.</p>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
             </button>
@@ -156,7 +182,8 @@
 
         <!-- Sección de Collapse -->
         <h2 class="mt-5">Colapsables</h2>
-        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseText" aria-expanded="false" aria-controls="collapseText">
+        <button class="btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseText"
+            aria-expanded="false" aria-controls="collapseText">
             Mostrar/ocultar noticia
         </button>
         <div class="collapse mt-2" id="collapseText">
@@ -166,7 +193,8 @@
         </div>
 
         <br>
-        <button class="btn btn-warning mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLink" aria-expanded="false" aria-controls="collapseLink">
+        <button class="btn btn-warning mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLink"
+            aria-expanded="false" aria-controls="collapseLink">
             Mostrar/ocultar noticia desde un link
         </button>
         <div class="collapse mt-2" id="collapseLink">
@@ -177,4 +205,5 @@
         <br><br>
     </div>
 </body>
+
 </html>
