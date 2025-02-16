@@ -4,84 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid Layout WEB</title>
-    <style>
-        body {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            grid-template-columns: 1fr;
-            background-color: #eee4e4;
-            gap: 10px;
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 10px;
-        }
-        .navbar div {
-            background-color: #beb1b1;
-            text-align: center; /* Cambiado a izquierda */
-            padding: 10px;
-        }
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #413e3e;
-            color: #7a7474;
-            padding: 20px;
-            text-align: left;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 10px;
-        }
-        aside {
-            background-color: #b3b3b3;
-            padding: 20px;
-            font-weight: bold;
-            text-align: left; /* Añadido */
-        }
-        main {
-            background-color: #e6e6e6;
-            padding: 20px;
-            text-align: left; /* Añadido */
-        }
-        .banner-d {
-            margin-top: 10px;
-            background-color: #9e8f8f;
-            color: #fff;
-            padding: 20px;
-            text-align: left; /* Cambiado a izquierda */
-        }
-        .footer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            background-color: #beb1b1;
-            padding: 15px;
-        }
-        .footer div {
-            background-color: #7a7474;
-            text-align: left; /* Cambiado a izquierda */
-            padding: 10px;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, auto);
-            }
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .footer {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, auto);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="navbar">
@@ -92,7 +15,8 @@
         <div>Find us</div>
         <div>Contact</div>
     </div>
-    <header>Lorem ipsum Lorem ipsum
+    <header>
+        <h1>Lorem ipsum Lorem ipsum</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
     </header>
     <div class="container">
