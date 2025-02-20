@@ -1,0 +1,31 @@
+// Variables
+$color-titulo: orange;
+$color-titulo-2: rgb(62, 62, 207);
+
+.contenedor {
+    .seccion {
+        &_titulo {
+            color: $color-titulo;
+            text-align: center;
+        }
+        &_parrafo {
+            margin-bottom: 10px;
+        }
+    }
+    .seccion2 {
+        &_titulo {
+            color: $color-titulo-2;
+            text-align: left;
+            text-decoration: underline;
+        }
+        &_cita_italica {
+            font-style: italic;
+        }
+        &_texto_derecha {
+            &::first-line {
+                font-weight: italic;
+            }
+            text-align: right;
+        }
+    }
+}

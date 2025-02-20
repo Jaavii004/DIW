@@ -1,0 +1,77 @@
+
+.titulo-estilos {
+    font-size: 28px;
+    font-weight: bold;
+    color: #004489;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.estilos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: center;
+
+}
+
+.estilo-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.estilo-item:hover {
+    transform: translateY(-5px);
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.estilo-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.tarjeta {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.tarjeta h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #004489;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.tarjeta .color-box {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.tarjeta .texto {
+    color: #999;
+    font-size: 14px;
+}

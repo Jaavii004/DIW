@@ -1,0 +1,21 @@
+.contenedor .seccion_titulo {
+  color: orange;
+  text-align: center;
+}
+.contenedor .seccion_parrafo {
+  margin-bottom: 10px;
+}
+.contenedor .seccion2_titulo {
+  color: rgb(62, 62, 207);
+  text-align: left;
+  text-decoration: underline;
+}
+.contenedor .seccion2_cita_italica {
+  font-style: italic;
+}
+.contenedor .seccion2_texto_derecha {
+  text-align: right;
+}
+.contenedor .seccion2_texto_derecha::first-line {
+  font-weight: italic;
+}/*# sourceMappingURL=styles.css.map */
