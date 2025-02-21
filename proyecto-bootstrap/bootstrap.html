@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Academy Pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #1f2937;
+            --accent-color: #3b82f6;
+            --text-light: #f3f4f6;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f5f9;
+        }
+
+        .navbar {
+            background-color: var(--secondary-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            padding: 6rem 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-text {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .match-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .match-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .standings-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .standings-table th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 500;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">FOOTBALL ACADEMY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Matches</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Standings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Academy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-custom ms-3" href="#">SIGN UP</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">FOOTBALL ACADEMY</h1>
+                    <p class="hero-text">Join our elite football academy and train with the best coaches in professional facilities. Develop your skills and reach your full potential.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-custom">JOIN NOW</button>
+                        <button class="btn btn-outline-light px-4">LEARN MORE</button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/terreno_juego.webp" alt="Football Training" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Matches Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Upcoming Matches</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="match-card">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="text-center">
+                                <img src="/api/placeholder/50/50" alt="Team 1" class="team-logo">
+                                <p class="mt-2 mb-0 fw-bold">Team A</p>
+                            </div>
+                            <div class="text-center">
+                                <h3 class="mb-2">VS</h3>
+                                <p class="mb-0">20:00</p>
+                                <small class="text-muted">Sat, Mar 15</small>
+                            </div>
+                            <div class="text-center">
+                                <img src="/api/placeholder/50/50" alt="Team 2" class="team-logo">
+                                <p class="mt-2 mb-0 fw-bold">Team B</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More match cards... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Standings Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">League Standings</h2>
+            <div class="standings-table">
+                <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Team</th>
+                            <th>P</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Team A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Team A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Team A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Team A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>48</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Team A</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>+30</td>
+                            <td>48</td>
+                        </tr>
+                        <!-- More rows... -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Latest News</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="news-card">
+                        <img src="img/fondo.webp" alt="News 1" class="news-image w-100">
+                        <div class="p-3">
+                            <h5 class="fw-bold">Academy Players Excel in National Tournament</h5>
+                            <p class="text-muted">Our U-18 team showed exceptional performance winning...</p>
+                            <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="news-card">
+                        <img src="img/fondo.webp" alt="News 1" class="news-image w-100">
+                        <div class="p-3">
+                            <h5 class="fw-bold">Academy Players Excel in National Tournament</h5>
+                            <p class="text-muted">Our U-18 team showed exceptional performance winning...</p>
+                            <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="news-card">
+                        <img src="img/fondo.webp" alt="News 1" class="news-image w-100">
+                        <div class="p-3">
+                            <h5 class="fw-bold">Academy Players Excel in National Tournament</h5>
+                            <p class="text-muted">Our U-18 team showed exceptional performance winning...</p>
+                            <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="news-card">
+                        <img src="img/benjamin.jpg" alt="News 1" class="news-image w-100">
+                        <div class="p-3">
+                            <h5 class="fw-bold">Academy Players Excel in National Tournament</h5>
+                            <p class="text-muted">Our U-18 team showed exceptional performance winning...</p>
+                            <a href="#" class="btn btn-sm btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- More news cards... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Academy Statistics</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">500+</div>
+                        <p class="mb-0">Students</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">50+</div>
+                        <p class="mb-0">Coaches</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">15</div>
+                        <p class="mb-0">Training Fields</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stats-card">
+                        <div class="stats-number">95%</div>
+                        <p class="mb-0">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">FOOTBALL ACADEMY</h5>
+                    <p>Developing tomorrow's football stars today.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Programs</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Schedule</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@footballacademy.com</li>
+                        <li>Phone: +1 234 567 890</li>
+                        <li>Address: 123 Stadium Street</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
