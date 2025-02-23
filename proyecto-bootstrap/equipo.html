@@ -2,157 +2,468 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E1 Paiporta</title>
-    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/equipo.css">
+    <meta charset="UTF-8" />
+    <title>Academia del Real Madrid - Jugadores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Estilos combinados (Calendario + Tarjetas Jugadores, sin footer) -->
+    <style>
+        /* ========================
+           VARIABLES Y ESTILOS BASE
+           ======================== */
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #2196f3;
+            --accent: #00c3ff;
+            --dark-blue: #2196f3;
+            --light-bg: #f8faff;
+            --dark-text: #0a1929;
+            --gray-text: #777;
+            --white: #fff;
+            --border-radius: 16px;
+
+            /* Variable dorada (por si se quiere usar) */
+            --gold: #d4af37;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            /* Espacio para no tapar el contenido con la navbar */
+            margin: 0;
+        }
+
+        /* ========================
+           NAVBAR
+           ======================== */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(26, 75, 140, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* Encabezado de la página */
+        .encabezado {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .encabezado h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .encabezado p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* ========================
+           SECCIÓN DE LA PLANTILLA
+           ======================== */
+        .seccion-plantilla {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--light-bg), #e2e8f0);
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+
+        .titulo-posicion {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin: 3rem 0 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--gold);
+        }
+
+        /* Tarjeta de jugador */
+        .tarjeta-jugador {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-color: var(--white);
+        }
+
+        .tarjeta-jugador:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contenedor-imagen-jugador {
+            position: relative;
+            padding-top: 125%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            overflow: hidden;
+        }
+
+        .imagen-jugador {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .tarjeta-jugador:hover .imagen-jugador {
+            transform: scale(1.1);
+        }
+
+        .numero-jugador {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-jugador {
+            padding: 1.5rem;
+            text-align: center;
+            background: var(--white);
+            position: relative;
+        }
+
+        .nombre-jugador {
+            margin: 0;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .etiqueta-posicion {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="contenedor">
-        <div class="migas-de-pan">
-            <a href="index.html">Inicio</a> >
-            <a href="equipos.html">Equipos</a> >
-            <a href="equipo.html">Equipo</a>
-        </div>
-        <header>
-            <a class="blanco-sinest" href="index.html">
-                <div class="logo"><img src="./img/logo.svg" class="logo-pequeño" alt="Logo C.F. E1 PAIPORTA">
-                    C.F. E1 PAIPORTA
-                </div>
+    <!-- Navbar (Bootstrap) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Branding / Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./img/logo.svg" alt="Logo C.F. E1 PAIPORTA" width="40" height="40"
+                    class="d-inline-block align-text-center me-2" />
+                C.F. E1 PAIPORTA
             </a>
-            <input type="checkbox" id="menu-desplegable" class="menu-desplegable-checkbox">
-            <label for="menu-desplegable" class="menu-desplegable">
-                <img class="img-menu" src="img/menu.webp" alt="">
-            </label>
-            <div class="nav-enlaces">
-                <a href="index.html" class="nav-enlace">Inicio</a>
-                <a href="equipos.html" class="nav-enlace">Equipos</a>
-                <div class="submenu">
-                    <a href="#" class="nav-enlace">Equipo</a>
-                    <div class="submenu-items">
-                        <a href="equipo.html" class="nav-enlace submenu-enlace">Castilla</a>
-                        <a href="jugador.html" class="nav-enlace submenu-enlace">Carvajal</a>
-                        <a href="palmares.html" class="nav-enlace submenu-enlace">Palmarés</a>
+
+            <!-- Botón para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces del menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+
+                    <!-- Equipos -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipos.html">Equipos</a>
+                    </li>
+
+                    <!-- Submenú "Equipo" con dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipo
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="equipo.html">Castilla</a></li>
+                            <li><a class="dropdown-item" href="jugador.html">Carvajal</a></li>
+                            <li><a class="dropdown-item" href="palmares.html">Palmarés</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contacto -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendario.html">Calendario</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de la Plantilla -->
+    <section class="seccion-plantilla">
+        <div class="container">
+            <div class="encabezado">
+                <h1>Jugadores</h1>
+                <p>Explora los jugadores de la plantilla del E1 Paiporta</p>
+            </div>
+
+            <!-- Porteros -->
+            <h3 class="titulo-posicion">Porteros</h3>
+            <div class="row">
+                <!-- Courtois -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/cortois.webp" alt="Courtois" class="imagen-jugador">
+                            <div class="numero-jugador">1</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Courtois</h4>
+                            <span class="etiqueta-posicion">Portero</span>
+                        </div>
                     </div>
                 </div>
-                <a href="contacto.html" class="nav-enlace">Contacto</a>
-            </div>
-        </header>
-
-        <section>
-            <div class="img-cabezera">
-                <div class="titulo-img-cabezera">Castilla</div>
-            </div>
-            <hr class="separador">
-        </section>
-
-        <section>
-            <h2>Porteros</h2>
-            <div class="jugadores-section">
-                <div class="jugador-card">
-                    <img src="img/jugadores/cortois.webp" alt="Courtois">
-                    <p class="jugador-nombre"><span class="numero">1</span> Courtois</p>
-                    <p class="jugador-posicion">Portero</p>
-                </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/01-Ter_Stegen-M.webp" alt="Ter Statuen">
-                    <p class="jugador-nombre"><span class="numero">13</span> Ter Statuen</p>
-                    <p class="jugador-posicion">Portero</p>
+                <!-- Ter Statuen -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/01-Ter_Stegen-M.webp" alt="Ter Statuen" class="imagen-jugador">
+                            <div class="numero-jugador">13</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Ter Statuen</h4>
+                            <span class="etiqueta-posicion">Portero</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h2>Defensa</h2>
-            <div class="jugadores-section">
-                <div class="jugador-card">
-                    <img src="img/jugadores/carvajal.webp" alt="Carvajal">
-                    <p class="jugador-nombre"><span class="numero">2</span> Carvajal</p>
-                    <p class="jugador-posicion">Defensa</p>
+            <!-- Defensas -->
+            <h3 class="titulo-posicion">Defensas</h3>
+            <div class="row">
+                <!-- Carvajal -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/carvajal.webp" alt="Carvajal" class="imagen-jugador">
+                            <div class="numero-jugador">2</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Carvajal</h4>
+                            <span class="etiqueta-posicion">Defensa</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/goat.webp" alt="GOAT">
-                    <p class="jugador-nombre"><span class="numero">99</span> GOAT</p>
-                    <p class="jugador-posicion">Defensa</p>
-                </div>
-            </div>
-
-            <h2>Centrocampistas</h2>
-            <div class="jugadores-section">
-                <div class="jugador-card">
-                    <img src="img/jugadores/jude.webp" alt="Jude Bellingham">
-                    <p class="jugador-nombre"><span class="numero">5</span> Jude Bellingham</p>
-                    <p class="jugador-posicion">Centrocampista</p>
-                </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/modric.webp" alt="Modrić">
-                    <p class="jugador-nombre"><span class="numero">10</span> Modrić</p>
-                    <p class="jugador-posicion">Centrocampista</p>
-                </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/valverde.webp" alt="Valverde">
-                    <p class="jugador-nombre"><span class="numero">15</span> Valverde</p>
-                    <p class="jugador-posicion">Centrocampista</p>
+                <!-- GOAT -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/goat.webp" alt="GOAT" class="imagen-jugador">
+                            <div class="numero-jugador">99</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">GOAT</h4>
+                            <span class="etiqueta-posicion">Defensa</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h2>Delanteros</h2>
-            <div class="jugadores-section">
-                <div class="jugador-card">
-                    <img src="img/jugadores/brahim.webp" alt="Brahim">
-                    <p class="jugador-nombre"><span class="numero">11</span> Brahim</p>
-                    <p class="jugador-posicion">Delantero</p>
+            <!-- Centrocampistas -->
+            <h3 class="titulo-posicion">Centrocampistas</h3>
+            <div class="row">
+                <!-- Jude Bellingham -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/jude.webp" alt="Jude Bellingham" class="imagen-jugador">
+                            <div class="numero-jugador">5</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Jude Bellingham</h4>
+                            <span class="etiqueta-posicion">Centrocampista</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/vini.webp" alt="Vini Jr.">
-                    <p class="jugador-nombre"><span class="numero">7</span> Vini Jr.</p>
-                    <p class="jugador-posicion">Delantero</p>
+                <!-- Modrić -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/modric.webp" alt="Modrić" class="imagen-jugador">
+                            <div class="numero-jugador">10</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Modrić</h4>
+                            <span class="etiqueta-posicion">Centrocampista</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Valverde -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/valverde.webp" alt="Valverde" class="imagen-jugador">
+                            <div class="numero-jugador">15</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Valverde</h4>
+                            <span class="etiqueta-posicion">Centrocampista</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h2>Cuerpo Técnico</h2>
-            <div class="jugadores-section">
-                <div class="jugador-card">
-                    <img src="img/jugadores/ANCELOTTI.webp" alt="Carlo Ancelotti">
-                    <p class="jugador-nombre">Carlo Ancelotti</p>
-                    <p class="jugador-posicion">Entrenador</p>
+            <!-- Delanteros -->
+            <h3 class="titulo-posicion">Delanteros</h3>
+            <div class="row">
+                <!-- Brahim -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/brahim.webp" alt="Brahim" class="imagen-jugador">
+                            <div class="numero-jugador">11</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Brahim</h4>
+                            <span class="etiqueta-posicion">Delantero</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="jugador-card">
-                    <img src="img/jugadores/amador.webp" alt="Amador">
-                    <p class="jugador-nombre">Amador</p>
-                    <p class="jugador-posicion">Recoge pelotas y conductor del Tuc-Tuc</p>
+                <!-- Vini Jr. -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/vini.webp" alt="Vini Jr." class="imagen-jugador">
+                            <div class="numero-jugador">7</div>
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Vini Jr.</h4>
+                            <span class="etiqueta-posicion">Delantero</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <footer>
-            <div class="footer-contenido">
-                <div class="footer-redes">
+            <!-- Cuerpo Técnico -->
+            <h3 class="titulo-posicion">Cuerpo Técnico</h3>
+            <div class="row">
+                <!-- Carlo Ancelotti -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="contenedor-imagen-jugador">
+                            <img src="img/jugadores/ANCELOTTI.webp" alt="Carlo Ancelotti" class="imagen-jugador">
+                            <!-- Sin número para el cuerpo técnico -->
+                        </div>
+                        <div class="info-jugador">
+                            <h4 class="nombre-jugador">Carlo Ancelotti</h4>
+                            <span class="etiqueta-posicion">Entrenador</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Redes sociales -->
+                <div class="col-md-4 mb-3">
                     <h4>Síguenos</h4>
-                    <div class="redes-sociales">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
+                    <div>
+                        <a href="#" class="text-decoration-none text-light d-block">Facebook</a>
+                        <a href="#" class="text-decoration-none text-light d-block">Instagram</a>
                     </div>
                 </div>
-                <div class="footer-logo">
-                    <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
-                    <p>C.F. E1 PAIPORTA</p>
+                <!-- Logo -->
+                <div class="col-md-4 mb-3 text-center">
+                    <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA" style="height: 60px;" />
+                    <p class="mt-2">C.F. E1 PAIPORTA</p>
                 </div>
-                <div class="footer-contacto">
+                <!-- Contacto -->
+                <div class="col-md-4 mb-3">
                     <h4>Contáctanos</h4>
-                    <p>Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia</p>
-                    <p>Email: contacto@cfpaioporta.com</p>
-                    <p>Tel: +34 640 27 58 34</p>
+                    <p class="mb-1">
+                        Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia
+                    </p>
+                    <p class="mb-1">
+                        Email:
+                        <a href="mailto:contacto@cfpaioporta.com" class="text-decoration-none text-light">
+                            contacto@cfpaioporta.com
+                        </a>
+                    </p>
+                    <p class="mb-1">Tel: +34 640 27 58 34</p>
                 </div>
             </div>
-            <div class="footer-derechos">
-                <hr class="separador">
-                <p>© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
-                <p class="redes-sociales"><a href="estilos.html">Guía de Estilo</a></p>
+
+            <hr class="bg-light" />
+            <div class="d-flex justify-content-between flex-column flex-md-row">
+                <p class="m-0">© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
+                <p class="m-0">
+                    <a href="estilos.html" class="text-decoration-none text-light">
+                        Guía de Estilo
+                    </a>
+                </p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 
 </html>

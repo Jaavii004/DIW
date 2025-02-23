@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calendario de Partidos - E1 Paiporta</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <style>
+        :root {
+            --primary: #1a4b8c;
+            --secondary: #2196f3;
+            --accent: #00c3ff;
+            --dark-blue: #2196f3;
+            --light-bg: #f8faff;
+            --dark-text: #0a1929;
+            --gray-text: #777;
+            --white: #fff;
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            margin: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(26, 75, 140, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary) !important;
+        }
+
+        /* Encabezado del calendario */
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .calendar-header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .calendar-header p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* Controles del calendario */
+        .calendar-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .months-nav {
+            display: flex;
+            gap: 0.75rem;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .month-link {
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: var(--white);
+            color: var(--dark-text);
+            border: 1px solid #ddd;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .month-link.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-custom-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            transition: all 0.3s;
+        }
+
+        .btn-custom-primary {
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 8px;
+            border: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        /* Contenedor y tarjetas de partidos (RESPONSIVE) */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            align-items: stretch;
+            /* Mantiene las tarjetas a la misma altura en cada fila */
+        }
+
+        .match-card {
+            border-radius: var(--border-radius);
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .match-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajuste para que la parte de arriba sea siempre igual */
+        .card-top {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            /* Ajusta esta altura si lo ves necesario */
+            min-height: 220px;
+            /* Centrar verticalmente el contenido */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .teams {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .team-info {
+            width: 40%;
+            text-align: center;
+        }
+
+        /* Forzar las imágenes a una misma medida */
+        .team-info img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 0.5rem;
+        }
+
+        .vs-icon {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--white);
+            margin: 0 0.5rem;
+        }
+
+        .card-bottom {
+            background-color: var(--white);
+            padding: 1rem;
+            font-size: 1.3rem;
+            margin-top: auto;
+            /* Para pegar la parte de abajo al fondo de la tarjeta */
+        }
+
+        .match-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .match-info {
+            color: var(--gray-text);
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a1929;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (Bootstrap) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Branding / Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./img/logo.svg" alt="Logo C.F. E1 PAIPORTA" width="40" height="40"
+                    class="d-inline-block align-text-center me-2" />
+                C.F. E1 PAIPORTA
+            </a>
+
+            <!-- Botón para pantallas pequeñas -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces del menú -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Inicio -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+
+                    <!-- Equipos -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipos.html">Equipos</a>
+                    </li>
+
+                    <!-- Submenú "Equipo" con dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Equipo
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="equipo.html">Castilla</a></li>
+                            <li><a class="dropdown-item" href="jugador.html">Carvajal</a></li>
+                            <li><a class="dropdown-item" href="palmares.html">Palmarés</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Contacto -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calendario.html">Calendario</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <div class="container mt-4">
+        <div class="calendar-header">
+            <h1>Calendario de Partidos</h1>
+            <p>Explora los próximos encuentros de E1 Paiporta</p>
+        </div>
+        <div class="calendar-controls">
+            <div class="months-nav">
+                <a href="#" class="month-link">Ene</a>
+                <a href="#" class="month-link">Feb</a>
+                <a href="#" class="month-link active">Mar</a>
+                <a href="#" class="month-link">Abr</a>
+                <a href="#" class="month-link">May</a>
+                <a href="#" class="month-link">Jun</a>
+                <a href="#" class="month-link">Jul</a>
+                <a href="#" class="month-link">Ago</a>
+                <a href="#" class="month-link">Sep</a>
+                <a href="#" class="month-link">Oct</a>
+                <a href="#" class="month-link">Nov</a>
+                <a href="#" class="month-link">Dic</a>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-custom-primary" data-bs-toggle="modal" data-bs-target="#subscribeModal">
+                    <i class="bi bi-bell-fill me-1"></i> Suscribirse
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjetas de Partidos -->
+    <div class="container">
+        <div class="cards-container">
+            <!-- Tarjeta 1 -->
+            <div class="match-card">
+                <div class="card-top">
+                    <div class="teams">
+                        <div class="team-info">
+                            <img src="img/logo_equipos/00100_0074501342_UD_Castellonense.png" alt="UD_Castellonense" />
+                            <div>UD Castellonense</div>
+                        </div>
+                        <div class="vs-icon">vs</div>
+                        <div class="team-info">
+                            <img src="img/logo.svg" alt="E1 Paiporta" />
+                            <div>E1 Paiporta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="match-title">Liga</div>
+                    <div class="match-info">
+                        Jornada 1<br />
+                        Sábado, 1 mar, 18:30 h<br />
+                        Campo Municipal de Paiporta<br />
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="match-card">
+                <div class="card-top">
+                    <div class="teams">
+                        <div class="team-info">
+                            <img src="img/logo_equipos/00100_0074568747_Patacona_CF.png" alt="Patacona_CF" />
+                            <div>Patacona CF</div>
+                        </div>
+                        <div class="vs-icon">vs</div>
+                        <div class="team-info">
+                            <img src="img/logo.svg" alt="E1 Paiporta" />
+                            <div>E1 Paiporta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="match-title">Liga</div>
+                    <div class="match-info">
+                        Jornada 2<br />
+                        Miércoles, 7 mar, 20:00 h<br />
+                        Campo Municipal de Patacona
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="match-card">
+                <div class="card-top">
+                    <div class="teams">
+                        <div class="team-info">
+                            <img src="img/logo_equipos/Atl_tico_Saguntino.png" alt="At. Saguntino" />
+                            <div>At. Saguntino</div>
+                        </div>
+                        <div class="vs-icon">vs</div>
+                        <div class="team-info">
+                            <img src="img/logo.svg" alt="Rayo Vallecano" />
+                            <div>E1 Rayo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="match-title">Liga</div>
+                    <div class="match-info">
+                        Jornada 3<br />
+                        Domingo, 12 mar, 21:00 h<br />
+                        Campo Municipal de Sagunto
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="match-card">
+                <div class="card-top">
+                    <div class="teams">
+                        <div class="team-info">
+                            <img src="img/logo.svg" alt="E1 Paiporta" />
+                            <div>E1 Paiporta</div>
+                        </div>
+                        <div class="vs-icon">vs</div>
+                        <div class="team-info">
+                            <img src="img/logo_equipos/CD_Utiel.png" alt="C.D. Utiel" />
+                            <div>C.D. Utiel</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="match-title">Liga</div>
+                    <div class="match-info">
+                        Jornada 4<br />
+                        Miércoles, 15 mar, 21:00 h<br />
+                        Campo Municipal de Paiporta
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 5 -->
+            <div class="match-card">
+                <div class="card-top">
+                    <div class="teams">
+                        <div class="team-info">
+                            <img src="img/logo.svg" alt="E1 Paiporta" />
+                            <div>E1 Paiporta</div>
+                        </div>
+                        <div class="vs-icon">vs</div>
+                        <div class="team-info">
+                            <img src="img/logo_equipos/00100_0074540210_Levante_UD.png" alt="Levante UD" />
+                            <div>Levante UD</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-bottom">
+                    <div class="match-title">Liga</div>
+                    <div class="match-info">
+                        Jornada 5<br />
+                        Miércoles, 15 mar, 21:00 h<br />
+                        Campo Municipal de Paiporta
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Redes sociales -->
+            <div class="col-md-4 mb-3">
+                <h4>Síguenos</h4>
+                <div>
+                    <a href="#" class="text-decoration-none text-light d-block">Facebook</a>
+                    <a href="#" class="text-decoration-none text-light d-block">Instagram</a>
+                </div>
+            </div>
+            <!-- Logo -->
+            <div class="col-md-4 mb-3 text-center">
+                <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA" style="height: 60px;" />
+                <p class="mt-2">C.F. E1 PAIPORTA</p>
+            </div>
+            <!-- Contacto -->
+            <div class="col-md-4 mb-3">
+                <h4>Contáctanos</h4>
+                <p class="mb-1">
+                    Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia
+                </p>
+                <p class="mb-1">
+                    Email:
+                    <a href="mailto:contacto@cfpaioporta.com" class="text-decoration-none text-light">
+                        contacto@cfpaioporta.com
+                    </a>
+                </p>
+                <p class="mb-1">Tel: +34 640 27 58 34</p>
+            </div>
+        </div>
+
+        <hr class="bg-light" />
+        <div class="d-flex justify-content-between flex-column flex-md-row">
+            <p class="m-0">© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
+            <p class="m-0">
+                <a href="estilos.html" class="text-decoration-none text-light">
+                    Guía de Estilo
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Modal de suscripción con formulario -->
+    <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subscribeModalLabel">Suscripción</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form id="subscribeForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="Ingrese su correo"
+                                required />
+                        </div>
+                        <p>
+                            Te mandaremos un correo para avisarte de nuestros partidos.
+                            <br />
+                            ¡Gracias por confiar en nosotros y disfruta del calendario de
+                            partidos!
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn-custom-primary">
+                            Suscribirse
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast de confirmación -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 2000">
+        <div id="subscriptionToast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">¡Te avisaremos de nuestros partidos!</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para manejo del formulario -->
+    <script>
+        document
+            .getElementById("subscribeForm")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
+                // Cerrar el modal
+                var modalElement = document.getElementById("subscribeModal");
+                var modal =
+                    bootstrap.Modal.getInstance(modalElement) ||
+                    new bootstrap.Modal(modalElement);
+                modal.hide();
+
+                // Mostrar el toast
+                var toastElement = document.getElementById("subscriptionToast");
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+
+                // Reiniciar el formulario
+                e.target.reset();
+            });
+    </script>
+</body>
+
+</html>
