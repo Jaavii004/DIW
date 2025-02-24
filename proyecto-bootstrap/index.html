@@ -18,16 +18,6 @@
             width: 100%;
         }
 
-        .player-stats {
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-        }
-
-        .player-stats div {
-            flex: 1;
-        }
-
         :root {
             --primary: #1a4b8c;
             --secondary: #2196f3;
@@ -50,6 +40,7 @@
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(26, 75, 140, 0.1);
+            z-index: 3;
         }
 
         /* Hero section con diseño asimétrico y gradiente dinámico */
@@ -315,9 +306,9 @@
             transform: translateY(-3px);
         }
 
-        @media (max-width: 868px) {
+        @media (max-width: 991px) {
             .stats-card {
-                margin-top: 1.5rem; /* Ajusta el valor según tu preferencia */
+                margin-top: 1.5rem;
             }
         }
     </style>
@@ -390,7 +381,7 @@
                         <span class="text-warning">orgullo de Paiporta</span>
                     </h1>
                     <p class="lead text-white mb-5">
-                        Fundado en 1940, nuestro club representa la tradición y la
+                        Fundado en 1990, nuestro club representa la tradición y la
                         entrega en cada temporada.
                     </p>
                     <div class="d-flex gap-3">
@@ -410,28 +401,28 @@
                         <!-- Años de Historia -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
-                                <h3 class="text-primary mb-0">83</h3>
+                                <h3 class="text-primary mb-0">+30</h3>
                                 <p class="mb-0">Años de historia</p>
                             </div>
                         </div>
                         <!-- Trofeos oficiales -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
-                                <h3 class="text-warning mb-0">18</h3>
+                                <h3 class="text-warning mb-0">9</h3>
                                 <p class="mb-0">Títulos oficiales</p>
                             </div>
                         </div>
                         <!-- Socios -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
-                                <h3 class="text-success mb-0">+5.000</h3>
-                                <p class="mb-0">Socios activos</p>
+                                <h3 class="text-success mb-0">+500</h3>
+                                <p class="mb-0">Socios</p>
                             </div>
                         </div>
                         <!-- Jugadores formados en la cantera -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
-                                <h3 class="text-info mb-0">45</h3>
+                                <h3 class="text-info mb-0">5</h3>
                                 <p class="mb-0">Jugadores de la cantera en 1ª División</p>
                             </div>
                         </div>
