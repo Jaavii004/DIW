@@ -1,0 +1,268 @@
+.img-cabezera {
+    background: url('../img/terreno_juego.webp') center/cover no-repeat;
+    min-height: 300px;
+    position: relative;
+    width: 100%;
+}
+.jugador-detalle {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    padding: 20px;
+    border-radius: 10px;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.jugador-info {
+    font-size: 18px;
+    color: #fff;
+}
+
+.jugador-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.numero {
+    font-size: 4rem;
+    color: #66abf0;
+}
+
+.jugador-foto img {
+    width: 170px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.estadisticas .caja-estadistica {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estadisticas .caja-estadistica p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #66abf0;
+    margin: 0;
+}
+
+.estadisticas .caja-estadistica span {
+    font-size: 1rem;
+    color: #757575;
+}
+
+.trayectoria {
+    position: relative;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 360px;
+}
+
+.trayectoria-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.trayectoria-point {
+    width: 20px;
+    height: 20px;
+    background-color: #66abf0;
+    border-radius: 50%;
+    position: absolute;
+    left: -30px;
+}
+
+.trayectoria-content {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: left;
+}
+
+.trayectoria h3 {
+    font-size: 19px;
+    color: #66abf0;
+    margin: 0;
+}
+
+.trayectoria:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #66abf0;
+}
+
+.espacio-separador {
+    margin-top: 3rem;
+}
+
+.separador {
+    margin: 0 auto;
+    width: 80%;
+    border-top: 2px solid #ccc;
+}
+
+.migas-de-pan a {
+    text-decoration: none;
+    color: #000;
+    margin-right: 5px;
+}
+
+.migas-de-pan a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.migas-de-pan {
+    margin: 1rem;
+}
+
+.footer-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.footer-contenido>div {
+    flex: 1;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.footer-logo img {
+    height: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-derechos {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.footer-derechos .redes-sociales a {
+    text-decoration: none;
+    color: #000;
+}
+
+.datos-personales-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.datos-personales {
+    background: linear-gradient(135deg, #0062cc, #66abf0);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.datos-personales-header {
+    text-align: center;
+    padding: 25px 0;
+    position: relative;
+}
+
+.datos-personales-header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.datos-personales h2 {
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.datos-personales-body {
+    padding: 25px 30px;
+}
+
+.datos-item {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.datos-item:last-child {
+    margin-bottom: 0;
+}
+
+.datos-label {
+    flex: 0 0 40%;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #f8f9fa;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.datos-label i {
+    margin-right: 15px;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    width: 24px;
+    text-align: center;
+}
+
+.datos-valor {
+    flex: 0 0 60%;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.datos-item:hover .datos-valor {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+@media (max-width: 576px) {
+    .datos-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .datos-label, .datos-valor {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    
+    .datos-valor {
+        margin-top: 5px;
+        margin-left: 34px;
+    }
+
+    .datos-personales {
+        padding: 0px 25px 0px 0px;
+    }
+}

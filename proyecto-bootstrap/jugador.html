@@ -9,172 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-
-
-
-    <style>
-        .img-cabezera {
-            background: url('img/terreno_juego.webp') center/cover no-repeat;
-            min-height: 300px;
-            position: relative;
-            width: 100%;
-        }
-        .jugador-detalle {
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
-            padding: 20px;
-            border-radius: 10px;
-            height: 50vh;
-            display: flex;
-            flex-direction: row;
-            gap: 10%;
-        }
-
-        .jugador-info {
-            font-size: 18px;
-            color: #fff;
-        }
-
-        .jugador-info h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .numero {
-            font-size: 4rem;
-            color: #66abf0;
-        }
-
-        .jugador-foto img {
-            width: 170px;
-            height: 190px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fff;
-        }
-
-        .estadisticas .caja-estadistica {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .estadisticas .caja-estadistica p {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #66abf0;
-            margin: 0;
-        }
-
-        .estadisticas .caja-estadistica span {
-            font-size: 1rem;
-            color: #757575;
-        }
-
-        .trayectoria {
-            position: relative;
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 360px;
-        }
-
-        .trayectoria-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .trayectoria-point {
-            width: 20px;
-            height: 20px;
-            background-color: #66abf0;
-            border-radius: 50%;
-            position: absolute;
-            left: -30px;
-        }
-
-        .trayectoria-content {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            text-align: left;
-        }
-
-        .trayectoria h3 {
-            font-size: 19px;
-            color: #66abf0;
-            margin: 0;
-        }
-
-        .trayectoria:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #66abf0;
-        }
-
-        .espacio-separador {
-            margin-top: 3rem;
-        }
-
-        .separador {
-            margin: 0 auto;
-            width: 80%;
-            border-top: 2px solid #ccc;
-        }
-
-        .migas-de-pan a {
-            text-decoration: none;
-            color: #000;
-            margin-right: 5px;
-        }
-
-        .migas-de-pan a:hover {
-            color: #007bff;
-            text-decoration: underline;
-        }
-
-        .migas-de-pan {
-            margin: 1rem;
-        }
-
-        .footer-contenido {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 1rem 0;
-        }
-
-        .footer-contenido>div {
-            flex: 1;
-            margin: 0.5rem;
-            text-align: center;
-        }
-
-        .footer-logo img {
-            height: 60px;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-derechos {
-            text-align: center;
-            margin: 1rem auto;
-        }
-
-        .footer-derechos .redes-sociales a {
-            text-decoration: none;
-            color: #000;
-        }
-
-    </style>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/jugador.css">
 </head>
 
 <body>
@@ -243,15 +81,12 @@
             </ol>
         </nav>
     </div>
-    <!-- Sección de imagen + datos del jugador -->
     <section>
         <div class="img-cabezera">
             <div class="jugador-detalle d-flex flex-column flex-md-row justify-content-center align-items-center">
-                <!-- Información del jugador -->
                 <div class="jugador-info mb-3 mb-md-0">
                     <h1><span class="numero">#2</span> Carvajal</h1>
                 </div>
-                <!-- Foto del jugador -->
                 <div class="jugador-foto">
                     <img src="./img/jugadores/carvajal.webp" alt="Foto de Carvajal" />
                 </div>
@@ -260,7 +95,6 @@
         <hr class="separador">
     </section>
 
-    <!-- Estadísticas -->
     <section class="container text-center mb-5">
         <div class="row">
             <div class="col">
@@ -298,23 +132,50 @@
 
     <hr class="separador espacio-separador" />
 
-    <!-- Datos personales -->
     <section class="container mb-5">
-        <div class="bg-primary p-4 rounded shadow-sm text-white" style="max-width: 600px; margin: 0 auto;">
-            <h2 class="text-center mb-4" style="font-size: 2.5rem;">Datos personales</h2>
-            <ul class="list-unstyled">
-                <li class="mb-3 fs-5"><strong class="text-warning">Nombre completo:</strong> Dani Carvajal</li>
-                <li class="mb-3 fs-5"><strong class="text-warning">Fecha de nacimiento:</strong> 11/01/1992</li>
-                <li class="mb-3 fs-5"><strong class="text-warning">Lugar de nacimiento:</strong> Leganés (España)</li>
-                <li class="mb-3 fs-5"><strong class="text-warning">Altura:</strong> 1.73 m</li>
-                <li class="mb-3 fs-5"><strong class="text-warning">Peso:</strong> 73 kg</li>
-            </ul>
+        <div class="datos-personales-container">
+            <div class="datos-personales">
+                <div class="datos-personales-header">
+                    <h2><i class="fas fa-id-card"></i> Datos personales</h2>
+                </div>
+                <div class="datos-personales-body">
+                    <div class="datos-item">
+                        <div class="datos-label">
+                            <i class="fas fa-user"></i> Nombre completo
+                        </div>
+                        <div class="datos-valor">Dani Carvajal</div>
+                    </div>
+                    <div class="datos-item">
+                        <div class="datos-label">
+                            <i class="fas fa-birthday-cake"></i> Fecha de nacimiento
+                        </div>
+                        <div class="datos-valor">11/01/1992</div>
+                    </div>
+                    <div class="datos-item">
+                        <div class="datos-label">
+                            <i class="fas fa-map-marker-alt"></i> Lugar de nacimiento
+                        </div>
+                        <div class="datos-valor">Leganés (España)</div>
+                    </div>
+                    <div class="datos-item">
+                        <div class="datos-label">
+                            <i class="fas fa-ruler-vertical"></i> Altura
+                        </div>
+                        <div class="datos-valor">1.73 m</div>
+                    </div>
+                    <div class="datos-item">
+                        <div class="datos-label">
+                            <i class="fas fa-weight"></i> Peso
+                        </div>
+                        <div class="datos-valor">73 kg</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <hr class="separador espacio-separador" />
 
-    <!-- Trayectoria -->
     <section class="container mb-5">
         <h2 class="text-center mb-4">Equipos en los que ha jugado</h2>
         <div class="trayectoria mx-auto">
@@ -339,11 +200,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-light pt-4 pb-1">
         <div class="container">
             <div class="row footer-contenido">
-                <!-- Redes -->
                 <div class="col-md-4 footer-redes">
                     <h4>Síguenos</h4>
                     <div class="redes-sociales">
@@ -351,12 +210,10 @@
                         <a href="#" class="text-decoration-none text-light d-block">Instagram</a>
                     </div>
                 </div>
-                <!-- Logo -->
                 <div class="col-md-4 footer-logo">
                     <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA">
                     <p>C.F. E1 PAIPORTA</p>
                 </div>
-                <!-- Contacto -->
                 <div class="col-md-4 footer-contacto">
                     <h4>Contáctanos</h4>
                     <p>Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia</p>

@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/style.css">
     <style>
         :root {
             --primary: #1a4b8c;
@@ -192,19 +193,6 @@
         .match-info {
             color: var(--gray-text);
             line-height: 1.4;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a1929;
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            margin: 0;
         }
     </style>
 </head>
@@ -434,50 +422,48 @@
         </div>
     </div>
 
-<!-- Footer -->
-<footer class="bg-dark text-light py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Redes sociales -->
-            <div class="col-md-4 mb-3">
-                <h4>Síguenos</h4>
-                <div>
-                    <a href="#" class="text-decoration-none text-light d-block">Facebook</a>
-                    <a href="#" class="text-decoration-none text-light d-block">Instagram</a>
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Club-de-F%C3%BAtbol-E1-Paiporta-100036108049569/?_rdr"
+                            title="Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/cfe1paiporta/?hl=es" title="Instagram" target="_blank"><i
+                                class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 text-center">
+                    <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA" style="height: 60px;" />
+                    <p class="mt-2">C.F. E1 PAIPORTA</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h4>Contáctanos</h4>
+                    <p class="mb-1">
+                        Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia
+                    </p>
+                    <p class="mb-1">
+                        Email:
+                        <a href="mailto:contacto@cfpaioporta.com" class="text-decoration-none text-light">
+                            contacto@cfpaioporta.com
+                        </a>
+                    </p>
+                    <p class="mb-1">Tel: +34 640 27 58 34</p>
                 </div>
             </div>
-            <!-- Logo -->
-            <div class="col-md-4 mb-3 text-center">
-                <img src="img/logo.svg" alt="Logo C.F. E1 PAIPORTA" style="height: 60px;" />
-                <p class="mt-2">C.F. E1 PAIPORTA</p>
-            </div>
-            <!-- Contacto -->
-            <div class="col-md-4 mb-3">
-                <h4>Contáctanos</h4>
-                <p class="mb-1">
-                    Campo de fútbol Mpal "El Terrer, C. Literat Azorín, s/n, 46200 Paiporta, Valencia
-                </p>
-                <p class="mb-1">
-                    Email:
-                    <a href="mailto:contacto@cfpaioporta.com" class="text-decoration-none text-light">
-                        contacto@cfpaioporta.com
+
+            <hr class="bg-light" />
+            <div class="d-flex justify-content-between flex-column flex-md-row">
+                <p class="m-0">© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
+                <p class="m-0">
+                    <a href="estilos.html" class="text-decoration-none text-light">
+                        Guía de Estilo
                     </a>
                 </p>
-                <p class="mb-1">Tel: +34 640 27 58 34</p>
             </div>
         </div>
-
-        <hr class="bg-light" />
-        <div class="d-flex justify-content-between flex-column flex-md-row">
-            <p class="m-0">© 2024 C.F. E1 PAIPORTA. Todos los derechos reservados.</p>
-            <p class="m-0">
-                <a href="estilos.html" class="text-decoration-none text-light">
-                    Guía de Estilo
-                </a>
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Modal de suscripción con formulario -->
     <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
