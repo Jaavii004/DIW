@@ -10,33 +10,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
-    <!-- Tus estilos (Opcionalmente, podrías mantenerlos externos) -->
-    <!--
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/jugador.css" />
-  -->
 
-    <!-- Ejemplo rápido de inclusión de tus clases en un bloque <style> -->
+
     <style>
-        /* === Comienza adaptación de tus clases === */
-
         .img-cabezera {
-            /* Ajusta esta clase si necesitas un fondo específico
-         o una altura particular para la sección superior */
             background: url('img/terreno_juego.webp') center/cover no-repeat;
             min-height: 300px;
             position: relative;
             width: 100%;
         }
-
         .jugador-detalle {
-            /* Para pantallas grandes, usaremos flex de Bootstrap.
-         Aquí, mantén solo estilos específicos (color, background, etc.) */
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
             padding: 20px;
             border-radius: 10px;
             height: 50vh;
-            /* Ajusta si lo deseas */
+            display: flex;
+            flex-direction: row;
+            gap: 10%;
         }
 
         .jugador-info {
@@ -63,7 +53,6 @@
             border: 3px solid #fff;
         }
 
-        /* Sección estadísticas */
         .estadisticas .caja-estadistica {
             background-color: #fff;
             padding: 1.5rem;
@@ -84,49 +73,11 @@
             color: #757575;
         }
 
-        /* Datos personales */
-        .datos-personales {
-            background: linear-gradient(to bottom, #004489, #66abf0);
-            padding: 20px;
-            border-radius: 10px;
-            color: #fff;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .datos-personales h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .datos-personales ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .datos-personales li {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        .datos-personales li strong {
-            color: #ffd700;
-            /* Amarillo dorado para destacar */
-            font-weight: bold;
-        }
-
-        /* Trayectoria */
         .trayectoria {
             position: relative;
             padding: 20px;
             margin: 0 auto;
             max-width: 360px;
-            /* Ajusta según tus necesidades */
         }
 
         .trayectoria-item {
@@ -170,7 +121,6 @@
             background-color: #66abf0;
         }
 
-        /* Separador con margen */
         .espacio-separador {
             margin-top: 3rem;
         }
@@ -181,7 +131,6 @@
             border-top: 2px solid #ccc;
         }
 
-        /* Migas de pan / Breadcrumb (si no usas .breadcrumb de Bootstrap) */
         .migas-de-pan a {
             text-decoration: none;
             color: #000;
@@ -197,7 +146,6 @@
             margin: 1rem;
         }
 
-        /* Ajustes del footer */
         .footer-contenido {
             display: flex;
             flex-wrap: wrap;
@@ -226,43 +174,34 @@
             color: #000;
         }
 
-        /* === Fin de tus clases adaptadas === */
     </style>
 </head>
 
 <body>
-
-    <!-- Navbar (Bootstrap) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Branding / Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="./img/logo.svg" alt="Logo C.F. E1 PAIPORTA" width="40" height="40"
                     class="d-inline-block align-text-center me-2" />
                 C.F. E1 PAIPORTA
             </a>
 
-            <!-- Botón para pantallas pequeñas -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del menú -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Inicio -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
 
-                    <!-- Equipos -->
                     <li class="nav-item">
                         <a class="nav-link" href="equipos.html">Equipos</a>
                     </li>
 
-                    <!-- Submenú "Equipo" con dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -275,7 +214,6 @@
                         </ul>
                     </li>
 
-                    <!-- Contacto -->
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
@@ -287,21 +225,30 @@
         </div>
     </nav>
 
-    <!-- Migas de pan (breadcrumb simple o el tuyo personalizado) -->
-    <div class="migas-de-pan">
-        <a href="index.html">Inicio</a> >
-        <a href="equipos.html">Equipos</a> >
-        <a href="equipo.html">Equipo</a> >
-        <a href="jugador.html">Jugador</a>
+    <div class="container my-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="equipos.html">Equipos</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="equipo.html">Equipo</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Jugador
+                </li>
+            </ol>
+        </nav>
     </div>
-
     <!-- Sección de imagen + datos del jugador -->
     <section>
         <div class="img-cabezera">
-            <div class="jugador-detalle d-flex flex-column flex-md-row justify-content-between align-items-center"
-                style="height: 50vh;">
+            <div class="jugador-detalle d-flex flex-column flex-md-row justify-content-center align-items-center">
                 <!-- Información del jugador -->
-                <div class="jugador-info text-center text-md-start mb-3 mb-md-0">
+                <div class="jugador-info mb-3 mb-md-0">
                     <h1><span class="numero">#2</span> Carvajal</h1>
                 </div>
                 <!-- Foto del jugador -->
@@ -353,14 +300,14 @@
 
     <!-- Datos personales -->
     <section class="container mb-5">
-        <div class="datos-personales mx-auto" style="max-width: 600px;">
-            <h2>Datos personales</h2>
-            <ul>
-                <li><strong>Nombre completo:</strong> Dani Carvajal</li>
-                <li><strong>Fecha de nacimiento:</strong> 11/01/1992</li>
-                <li><strong>Lugar de nacimiento:</strong> Leganés (España)</li>
-                <li><strong>Altura:</strong> 1.73 m</li>
-                <li><strong>Peso:</strong> 73 kg</li>
+        <div class="bg-primary p-4 rounded shadow-sm text-white" style="max-width: 600px; margin: 0 auto;">
+            <h2 class="text-center mb-4" style="font-size: 2.5rem;">Datos personales</h2>
+            <ul class="list-unstyled">
+                <li class="mb-3 fs-5"><strong class="text-warning">Nombre completo:</strong> Dani Carvajal</li>
+                <li class="mb-3 fs-5"><strong class="text-warning">Fecha de nacimiento:</strong> 11/01/1992</li>
+                <li class="mb-3 fs-5"><strong class="text-warning">Lugar de nacimiento:</strong> Leganés (España)</li>
+                <li class="mb-3 fs-5"><strong class="text-warning">Altura:</strong> 1.73 m</li>
+                <li class="mb-3 fs-5"><strong class="text-warning">Peso:</strong> 73 kg</li>
             </ul>
         </div>
     </section>

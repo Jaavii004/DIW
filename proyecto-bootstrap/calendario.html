@@ -22,7 +22,6 @@
         }
 
         body {
-            font-family: "Inter", system-ui, sans-serif;
             background-color: var(--light-bg);
             color: var(--dark-text);
             margin: 0;
@@ -35,10 +34,7 @@
             border-bottom: 1px solid rgba(26, 75, 140, 0.1);
         }
 
-        .navbar-brand {
-            font-weight: bold;
-            color: var(--primary) !important;
-        }
+
 
         /* Encabezado del calendario */
         .calendar-header {
@@ -177,18 +173,14 @@
         }
 
         .vs-icon {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: var(--white);
-            margin: 0 0.5rem;
+            width: 40px;
+            height: 40px;
         }
 
         .card-bottom {
             background-color: var(--white);
             padding: 1rem;
             font-size: 1.3rem;
-            margin-top: auto;
-            /* Para pegar la parte de abajo al fondo de la tarjeta */
         }
 
         .match-title {
@@ -273,6 +265,20 @@
         </div>
     </nav>
 
+    <!-- Migas de pan (breadcrumb) -->
+    <div class="container my-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    Calendario
+                </li>
+            </ol>
+        </nav>
+    </div>
+
     <!-- Encabezado -->
     <div class="container mt-4">
         <div class="calendar-header">
@@ -311,9 +317,9 @@
                     <div class="teams">
                         <div class="team-info">
                             <img src="img/logo_equipos/00100_0074501342_UD_Castellonense.png" alt="UD_Castellonense" />
-                            <div>UD Castellonense</div>
+                            <div>Castellonense</div>
                         </div>
-                        <div class="vs-icon">vs</div>
+                        <img src="img/LOGO_CIRCULAR.png" alt="vs" class="vs-icon" />
                         <div class="team-info">
                             <img src="img/logo.svg" alt="E1 Paiporta" />
                             <div>E1 Paiporta</div>
@@ -337,7 +343,7 @@
                             <img src="img/logo_equipos/00100_0074568747_Patacona_CF.png" alt="Patacona_CF" />
                             <div>Patacona CF</div>
                         </div>
-                        <div class="vs-icon">vs</div>
+                        <img src="img/LOGO_CIRCULAR.png" alt="vs" class="vs-icon" />
                         <div class="team-info">
                             <img src="img/logo.svg" alt="E1 Paiporta" />
                             <div>E1 Paiporta</div>
@@ -359,12 +365,12 @@
                     <div class="teams">
                         <div class="team-info">
                             <img src="img/logo_equipos/Atl_tico_Saguntino.png" alt="At. Saguntino" />
-                            <div>At. Saguntino</div>
+                            <div>Saguntino</div>
                         </div>
-                        <div class="vs-icon">vs</div>
+                        <img src="img/LOGO_CIRCULAR.png" alt="vs" class="vs-icon" />
                         <div class="team-info">
                             <img src="img/logo.svg" alt="Rayo Vallecano" />
-                            <div>E1 Rayo</div>
+                            <div>E1 Paiporta</div>
                         </div>
                     </div>
                 </div>
@@ -385,7 +391,7 @@
                             <img src="img/logo.svg" alt="E1 Paiporta" />
                             <div>E1 Paiporta</div>
                         </div>
-                        <div class="vs-icon">vs</div>
+                        <img src="img/LOGO_CIRCULAR.png" alt="vs" class="vs-icon" />
                         <div class="team-info">
                             <img src="img/logo_equipos/CD_Utiel.png" alt="C.D. Utiel" />
                             <div>C.D. Utiel</div>
@@ -409,7 +415,7 @@
                             <img src="img/logo.svg" alt="E1 Paiporta" />
                             <div>E1 Paiporta</div>
                         </div>
-                        <div class="vs-icon">vs</div>
+                        <img src="img/copa_rey.svg" alt="vs" class="vs-icon" />
                         <div class="team-info">
                             <img src="img/logo_equipos/00100_0074540210_Levante_UD.png" alt="Levante UD" />
                             <div>Levante UD</div>
@@ -417,9 +423,9 @@
                     </div>
                 </div>
                 <div class="card-bottom">
-                    <div class="match-title">Liga</div>
+                    <div class="match-title">Copa del Rey</div>
                     <div class="match-info">
-                        Jornada 5<br />
+                        Octavos<br />
                         Miércoles, 15 mar, 21:00 h<br />
                         Campo Municipal de Paiporta
                     </div>

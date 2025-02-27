@@ -7,341 +7,45 @@
     <title>E1 Paiporta | La Pasión del Fútbol</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <style>
-        .player-image {
-            height: 250px;
-            object-fit: cover;
-            object-position: top;
-            width: 100%;
-        }
+    <link rel="stylesheet" href="css/style.css">
 
-        :root {
-            --primary: #1a4b8c;
-            --secondary: #2196f3;
-            --accent: #00c3ff;
-            --dark: #0a1929;
-            --light: #f8faff;
-            --success: #4caf50;
-            --warning: #ffc107;
-            --danger: #f44336;
-        }
-
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--light);
-            color: var(--dark);
-        }
-
-        /* Navbar con efecto glassmorphism */
-        .navbar {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(26, 75, 140, 0.1);
-            z-index: 3;
-        }
-
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg,
-                    rgba(26, 75, 140, 0.95) 0%,
-                    rgba(33, 150, 243, 0.85) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('img/terreno_juego.webp') center/cover;
-            opacity: 0.3;
-            mix-blend-mode: overlay;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 8rem 0;
-        }
-
-        /* Estadísticas flotantes */
-        .stats-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .stats-card:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Tarjetas de jugadores */
-        .player-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .player-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .player-image {
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .player-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--light);
-        }
-
-        /* Timeline de eventos */
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background: var(--primary);
-        }
-
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .timeline-content {
-            background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            width: calc(50% - 30px);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: auto;
-        }
-
-        /* Galería de fotos */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 2rem 0;
-        }
-
-        .gallery-item {
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 1;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Patrocinadores */
-        .sponsors {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            align-items: center;
-            padding: 2rem 0;
-        }
-
-        .sponsor-logo {
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-
-        .sponsor-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        /* Calendario de partidos */
-        .match-calendar {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .match-item {
-            padding: 1.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .match-item:hover {
-            background-color: var(--light);
-        }
-
-        .match-result {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        /* Botones personalizados */
-        .btn-custom {
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .btn-custom-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-
-        .btn-custom-primary:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
-        }
-
-        /* Newsletter form */
-        .newsletter-form {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-control-custom {
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-control-custom:focus {
-            border-color: var(--secondary);
-            box-shadow: none;
-        }
-
-        /* Footer mejorado */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-widget h5 {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            margin-right: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 991px) {
-            .stats-card {
-                margin-top: 1.5rem;
-            }
-        }
-    </style>
+    <meta name="description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <meta name="keywords" content="fútbol, club de fútbol, E1 Paiporta, deportes, Valencia, equipos de fútbol, partidos de fútbol, jugadores de fútbol">
+    <meta name="author" content="C.F. E1 PAIPORTA">
+    <meta property="og:title" content="C.F. E1 PAIPORTA | La Pasión del Fútbol">
+    <meta property="og:description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <meta property="og:image" content="https://www.cfpaioporta.com/img/logo.svg">
+    <meta property="og:url" content="https://www.cfpaioporta.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="C.F. E1 PAIPORTA | La Pasión del Fútbol">
+    <meta name="twitter:description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
 </head>
 
 <body>
-    <!-- Navbar (Bootstrap) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Branding / Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="./img/logo.svg" alt="Logo C.F. E1 PAIPORTA" width="40" height="40"
                     class="d-inline-block align-text-center me-2" />
                 C.F. E1 PAIPORTA
             </a>
 
-            <!-- Botón para pantallas pequeñas -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del menú -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Inicio -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
 
-                    <!-- Equipos -->
                     <li class="nav-item">
                         <a class="nav-link" href="equipos.html">Equipos</a>
                     </li>
 
-                    <!-- Submenú "Equipo" con dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -354,7 +58,6 @@
                         </ul>
                     </li>
 
-                    <!-- Contacto -->
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
@@ -366,11 +69,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero d-flex align-items-center" id="inicio">
         <div class="container">
             <div class="row hero-content">
-                <!-- Texto principal -->
                 <div class="col-lg-6">
                     <h1 class="display-3 text-white fw-bold mb-4">
                         Pasión por el fútbol,
@@ -391,45 +92,38 @@
                     </div>
                 </div>
 
-                <!-- Estadísticas históricas o relevantes -->
                 <div class="col-lg-6">
                     <div class="row">
-                        <!-- Años de Historia -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
                                 <h3 class="text-primary mb-0">+30</h3>
                                 <p class="mb-0">Años de historia</p>
                             </div>
                         </div>
-                        <!-- Trofeos oficiales -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
                                 <h3 class="text-warning mb-0">9</h3>
                                 <p class="mb-0">Títulos oficiales</p>
                             </div>
                         </div>
-                        <!-- Socios -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
                                 <h3 class="text-success mb-0">+500</h3>
                                 <p class="mb-0">Socios</p>
                             </div>
                         </div>
-                        <!-- Jugadores formados en la cantera -->
                         <div class="col-md-6">
                             <div class="stats-card text-center p-3 mb-3 bg-white shadow-sm rounded">
-                                <h3 class="text-info mb-0">5</h3>
-                                <p class="mb-0">Jugadores de la cantera en 1ª División</p>
+                                <h3 class="text-info mb-0">500</h3>
+                                <p class="mb-0">Capacidad del estadio</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /col-lg-6 -->
             </div>
         </div>
     </section>
 
-    <!-- Próximo Partido -->
     <section class="py-5">
         <h2 class="text-center mb-5">Próximo partido</h2>
         <div class="container">
@@ -453,12 +147,10 @@
         </div>
     </section>
 
-    <!-- Jugadores Destacados -->
     <section class="py-5 bg-light" id="equipo">
         <div class="container">
             <h2 class="text-center mb-5">Jugadores Destacados</h2>
             <div class="row g-4">
-                <!-- Jugador 1 -->
                 <div class="col-md-4">
                     <div class="player-card">
                         <img src="img/jugadores/brahim.webp" alt="Jugador 1" class="player-image w-100">
@@ -482,7 +174,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Jugador 2 -->
                 <div class="col-md-4">
                     <div class="player-card">
                         <img src="img/jugadores/cortois.webp" alt="Jugador 2" class="player-image w-100">
@@ -506,7 +197,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Jugador 3 -->
                 <div class="col-md-4">
                     <div class="player-card">
                         <img src="img/jugadores/modric.webp" alt="Jugador 3" class="player-image w-100">
@@ -533,7 +223,6 @@
             </div>
         </div>
     </section>
-    <!-- Calendario de Partidos -->
     <section class="py-5" id="calendario">
         <div class="container">
             <h2 class="text-center mb-5">Calendario de Partidos</h2>
@@ -566,8 +255,7 @@
         </div>
     </section>
 
-    <!-- Noticias -->
-    <section class="py-5 bg-light" id="noticias">
+    <section class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Noticias Recientes</h2>
             <div class="row g-4">
@@ -608,97 +296,38 @@
     </section>
 
     <!-- Galería -->
-    <!-- <section class="py-5" id="galeria">
+    <section class="py-5" id="galeria">
         <div class="container">
             <h2 class="text-center mb-5">Galería de Fotos</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 4">
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Galería 6">
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contacto -->
-    <!-- <section class="py-5 bg-light" id="contacto">
-        <div class="container">
-            <h2 class="text-center mb-5">Contacto</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form class="newsletter-form">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control form-control-custom" id="nombre"
-                                placeholder="Tu nombre">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control form-control-custom" id="email"
-                                placeholder="tucorreo@ejemplo.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control form-control-custom" id="mensaje" rows="5"
-                                placeholder="Escribe tu mensaje"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-custom btn-custom-primary w-100">Enviar Mensaje</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Footer -->
-    <!-- <footer>
-        <div class="container">
-            <div class="row">
-                
-                <div class="col-md-4">
-                    <h5>Acerca de E1 Paiporta</h5>
-                    <p>Somos un equipo comprometido con la pasión del fútbol y la comunidad de Paiporta. Únete a nuestra
-                        familia.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Enlaces Útiles</h5>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#equipo">Equipo</a></li>
-                        <li><a href="calendario.html">Calendario</a></li>
-                        <li><a href="#noticias">Noticias</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Síguenos</h5>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/femenina.webp" class="d-block w-100" alt="Equipo femenino">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/femenina.jpg" class="d-block w-100" alt="Jugadoras del equipo femenino">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/real_madrid_b.webp" class="d-block w-100" alt="equipo Real Madrid B">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/realmadrid_vieja.jpg" class="d-block w-100" alt="equipo Real Madrid">
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 E1 Paiporta. Todos los derechos reservados.</p>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
             </div>
         </div>
-    </footer> -->
+    </section>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-light py-4">
@@ -707,9 +336,11 @@
                 <!-- Redes sociales -->
                 <div class="col-md-4 mb-3">
                     <h4>Síguenos</h4>
-                    <div>
-                        <a href="#" class="text-decoration-none text-light d-block">Facebook</a>
-                        <a href="#" class="text-decoration-none text-light d-block">Instagram</a>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <!-- Logo -->

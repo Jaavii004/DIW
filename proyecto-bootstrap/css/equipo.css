@@ -1,47 +1,161 @@
-.jugadores-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 20px;
-    overflow-y: auto;
+:root {
+    --primary: #1a4b8c;
+    --secondary: #2196f3;
+    --accent: #00c3ff;
+    --dark-blue: #2196f3;
+    --light-bg: #f8faff;
+    --dark-text: #0a1929;
+    --gray-text: #777;
+    --white: #fff;
+    --border-radius: 16px;
+
+    /* Variable dorada (por si se quiere usar) */
+    --gold: #d4af37;
 }
 
-.jugador-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    /* Espacio para no tapar el contenido con la navbar */
+    margin: 0;
+}
+
+/* ========================
+   NAVBAR
+   ======================== */
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(26, 75, 140, 0.1);
+}
+
+/* Encabezado de la página */
+.encabezado {
     text-align: center;
-    padding: 20px;
-    max-width: 190px;
-    transition: transform 0.3s ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
-.jugador-card img {
+.encabezado h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.encabezado p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* ========================
+   SECCIÓN DE LA PLANTILLA
+   ======================== */
+.seccion-plantilla {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--light-bg), #e2e8f0);
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    color: var(--primary);
+}
+
+.titulo-seccion::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+}
+
+.titulo-posicion {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 3rem 0 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--gold);
+}
+
+/* Tarjeta de jugador */
+.tarjeta-jugador {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: var(--white);
+}
+
+.tarjeta-jugador:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-imagen-jugador {
+    position: relative;
+    padding-top: 125%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    overflow: hidden;
+}
+
+.imagen-jugador {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-jugador:hover .imagen-jugador {
+    transform: scale(1.1);
+}
+
+.numero-jugador {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary);
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-}
-
-.jugador-nombre {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.jugador-posicion {
-    font-size: 14px;
-    color: #888;
+.info-jugador {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--white);
+    position: relative;
 }
 
-.jugador-card:hover {
-    transform: scale(1.05);
+.nombre-jugador {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.2rem;
 }
 
-.numero {
-    font-size: 30px;
-    color: #66abf0;
-    margin-right: 5px;
+.etiqueta-posicion {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+    font-weight: 500;
 }
