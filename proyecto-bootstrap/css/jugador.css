@@ -131,33 +131,6 @@
     margin: 1rem;
 }
 
-.footer-contenido {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 1rem 0;
-}
-
-.footer-contenido>div {
-    flex: 1;
-    margin: 0.5rem;
-    text-align: center;
-}
-
-.footer-logo img {
-    height: 60px;
-    margin-bottom: 0.5rem;
-}
-
-.footer-derechos {
-    text-align: center;
-    margin: 1rem auto;
-}
-
-.footer-derechos .redes-sociales a {
-    text-decoration: none;
-    color: #000;
-}
 
 .datos-personales-container {
     max-width: 700px;
