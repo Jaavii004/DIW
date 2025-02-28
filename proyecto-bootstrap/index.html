@@ -122,22 +122,21 @@
             </div>
         </div>
     </section>
-
     <section class="py-5">
         <h2 class="text-center mb-5">Próximo partido</h2>
         <div class="container">
             <div class="card p-4">
                 <div class="row align-items-center text-center">
-                    <div class="col">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0">
                         <img src="img/logo.svg" alt="E1 Paiporta" class="mb-2" style="height: 80px;">
                         <h4>E1 Paiporta</h4>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-4 mb-3 mb-md-0">
                         <img src="img/LOGO_CIRCULAR.png" alt="" width="80" class="mb-2">
                         <p class="mb-0 text-muted">28 Feb - 20:00</p>
                         <span class="badge bg-primary mt-2">Liga - Jornada 5</span>
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-4">
                         <img src="img/real_madrid_logo.png" alt="Rival Real Madrid" class="mb-2" style="height: 80px;">
                         <h4>Real Madrid</h4>
                     </div>
@@ -145,27 +144,22 @@
             </div>
         </div>
     </section>
-
     <section class="py-5 bg-light" id="equipo">
         <div class="container">
             <h2 class="text-center mb-5">Jugadores Destacados</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="tarjeta-jugador">
-                        <img src="img/jugadores/brahim.webp" alt="Jugador 1" class="imagen-jugador w-100">
-                        <div class="p-3">
-                            <h4>Carlos Martínez</h4>
+            <div class="row g-4 justify-content-center"> <!-- Añadido justify-content-center para centrar las tarjetas -->
+                <div class="col-md-3">
+                    <div class="tarjeta-jugador d-flex flex-column align-items-center"> <!-- Flex para alinear y centrar contenido -->
+                        <img src="img/jugadores/brahim.webp" alt="Foto de Brahim" class="imagen-jugador w-100">
+                        <div class="p-2 text-center"> <!-- Centrado del texto dentro de la tarjeta -->
+                            <h4>Brahim</h4>
                             <p class="text-muted">Delantero</p>
                             <div class="estadisticas-jugador">
-                                <div class="text-center">
+                                <div>
                                     <h5>15</h5>
                                     <small>Goles</small>
                                 </div>
-                                <div class="text-center">
-                                    <h5>8</h5>
-                                    <small>Asistencias</small>
-                                </div>
-                                <div class="text-center">
+                                <div>
                                     <h5>25</h5>
                                     <small>Partidos</small>
                                 </div>
@@ -173,22 +167,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="tarjeta-jugador">
-                        <img src="img/jugadores/cortois.webp" alt="Jugador 2" class="imagen-jugador w-100">
-                        <div class="p-3">
-                            <h4>Luis García</h4>
-                            <p class="text-muted">Mediocampista</p>
+                <div class="col-md-3">
+                    <div class="tarjeta-jugador d-flex flex-column align-items-center">
+                        <img src="img/jugadores/vini.webp" alt="Foto de Vini Jr." class="imagen-jugador w-100">
+                        <div class="p-2 text-center">
+                            <h4>Vini Jr.</h4>
+                            <p class="text-muted">Delantero</p>
                             <div class="estadisticas-jugador">
-                                <div class="text-center">
-                                    <h5>10</h5>
+                                <div>
+                                    <h5>21</h5>
                                     <small>Goles</small>
                                 </div>
-                                <div class="text-center">
-                                    <h5>12</h5>
-                                    <small>Asistencias</small>
-                                </div>
-                                <div class="text-center">
+                                <div>
                                     <h5>30</h5>
                                     <small>Partidos</small>
                                 </div>
@@ -196,22 +186,37 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="tarjeta-jugador">
-                        <img src="img/jugadores/modric.webp" alt="Jugador 3" class="imagen-jugador w-100">
-                        <div class="p-3">
-                            <h4>Jorge López</h4>
-                            <p class="text-muted">Defensa</p>
+                <div class="col-md-3">
+                    <div class="tarjeta-jugador d-flex flex-column align-items-center">
+                        <img src="img/jugadores/valverde.webp" alt="Foto de Valverde" class="imagen-jugador w-100">
+                        <div class="p-2 text-center">
+                            <h4>Valverde</h4>
+                            <p class="text-muted">Centrocampista</p>
                             <div class="estadisticas-jugador">
-                                <div class="text-center">
+                                <div>
+                                    <h5>35</h5>
+                                    <small>Goles</small>
+                                </div>
+                                <div>
+                                    <h5>40</h5>
+                                    <small>Partidos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="tarjeta-jugador d-flex flex-column align-items-center">
+                        <img src="img/jugadores/modric.webp" alt="Jugador 3" class="imagen-jugador w-100">
+                        <div class="p-2 text-center">
+                            <h4>Modrić</h4>
+                            <p class="text-muted">Centrocampista</p>
+                            <div class="estadisticas-jugador">
+                                <div>
                                     <h5>2</h5>
                                     <small>Goles</small>
                                 </div>
-                                <div class="text-center">
-                                    <h5>5</h5>
-                                    <small>Asistencias</small>
-                                </div>
-                                <div class="text-center">
+                                <div>
                                     <h5>28</h5>
                                     <small>Partidos</small>
                                 </div>
@@ -222,6 +227,7 @@
             </div>
         </div>
     </section>
+    
     <section class="py-5" id="calendario">
         <div class="container">
             <h2 class="text-center mb-5">Calendario de Partidos</h2>
