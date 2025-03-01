@@ -1,0 +1,173 @@
+:root {
+    --primario: #1a4b8c;
+    --secundario: #2196f3;
+    --acento: #00c3ff;
+    --azul-oscuro: #2196f3;
+    --fondo-claro: #f8faff;
+    --texto-oscuro: #0a1929;
+    --texto-gris: #777;
+    --blanco: #fff;
+    --radio-borde: 16px;
+}
+
+body {
+    background-color: var(--fondo-claro);
+    color: var(--texto-oscuro);
+    margin: 0;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(26, 75, 140, 0.1);
+}
+
+.encabezado-calendario {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.encabezado-calendario h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.encabezado-calendario p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.controles-calendario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.navegacion-meses {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.enlace-mes {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: var(--blanco);
+    color: var(--texto-oscuro);
+    border: 1px solid #ddd;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.enlace-mes.activo {
+    background: var(--primario);
+    color: var(--blanco);
+    border-color: var(--primario);
+}
+
+.botones-accion {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-contorno-personalizado {
+    border: 1px solid var(--primario);
+    color: var(--primario);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.btn-primario-personalizado {
+    background: var(--primario);
+    color: var(--blanco);
+    border-radius: 8px;
+    border: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.tarjeta-partido {
+    border-radius: var(--radio-borde);
+    background-color: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-partido:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.parte-superior-tarjeta {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.equipos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-equipo {
+    width: 40%;
+    text-align: center;
+}
+
+.info-equipo img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+
+.icono-vs {
+    width: 40px;
+    height: 40px;
+}
+
+.parte-inferior-tarjeta {
+    background-color: var(--blanco);
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.titulo-partido {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.info-partido {
+    color: var(--texto-gris);
+    line-height: 1.4;
+}

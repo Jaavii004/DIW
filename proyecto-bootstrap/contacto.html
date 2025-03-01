@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C.F. E1 PAIPORTA</title>
     <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
-    <!-- Bootstrap y Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -14,37 +13,30 @@
 
 <body>
 
-    <!-- Navbar (Bootstrap) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Branding / Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="./img/logo.svg" alt="Logo C.F. E1 PAIPORTA" width="40" height="40"
                     class="d-inline-block align-text-center me-2" />
                 C.F. E1 PAIPORTA
             </a>
 
-            <!-- Botón para pantallas pequeñas -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Enlaces del menú -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Inicio -->
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
 
-                    <!-- Equipos -->
                     <li class="nav-item">
                         <a class="nav-link" href="equipos.html">Equipos</a>
                     </li>
 
-                    <!-- Submenú "Equipo" con dropdown -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -57,7 +49,6 @@
                         </ul>
                     </li>
 
-                    <!-- Contacto -->
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
@@ -82,34 +73,28 @@
         </nav>
     </div>
 
-    <!-- Formulario de contacto -->
     <section class="container mb-5">
         <h2 class="mb-4 text-center">Contáctanos</h2>
         <form action="#" method="post" class="row g-3">
-            <!-- Nombre -->
             <div class="col-md-6">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" required>
             </div>
-            <!-- Email -->
             <div class="col-md-6">
                 <label for="email" class="form-label">Correo electrónico:</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Tu correo electrónico"
                     required>
             </div>
-            <!-- Asunto -->
             <div class="col-12">
                 <label for="asunto" class="form-label">Asunto:</label>
                 <input type="text" id="asunto" name="asunto" class="form-control" placeholder="Motivo del mensaje"
                     required>
             </div>
-            <!-- Mensaje -->
             <div class="col-12">
                 <label for="mensaje" class="form-label">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="5" class="form-control"
                     placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
-            <!-- Botón de envío -->
             <div class="col-12 mb-5">
                 <button type="submit" class="btn btn-primary">
                     Enviar
@@ -118,7 +103,6 @@
         </form>
     </section>
 
-    <!-- Mapa o información adicional -->
     <section class="container mb-5 fade-in" style="animation-delay: 0.2s;">
         <div class="row">
             <div class="col-md-6 mb-4">
@@ -127,7 +111,6 @@
                     <p>Nos encontramos en el Campo de fútbol Municipal "El Terrer", situado en:</p>
                     <p class="ms-4 mb-4">C. Literat Azorín, s/n<br>46200 Paiporta, Valencia</p>
 
-                    <!-- Aquí podrías insertar un iframe de Google Maps -->
                     <div class="ratio ratio-16x9 mt-3 mb-2">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1916.2330935856912!2d-0.41405929213650244!3d39.42355541621021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604e5f99a1f401%3A0x93af256885f7471d!2sClub%20de%20F%C3%BAtbol%20E1%20Valencia!5e1!3m2!1ses!2ses!4v1740844096511!5m2!1ses!2ses"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>

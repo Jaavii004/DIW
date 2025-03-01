@@ -73,7 +73,6 @@ body {
     border-left: 4px solid var(--gold);
 }
 
-/* Tarjeta de jugador */
 .tarjeta-jugador {
     border-radius: var(--border-radius);
     overflow: hidden;
