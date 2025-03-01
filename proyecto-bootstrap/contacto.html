@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>C.F. E1 PAIPORTA</title>
     <link rel="icon" href="img/logo.svg" type="image/svg+xml" />
-
+    <!-- Bootstrap y Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -69,7 +69,6 @@
         </div>
     </nav>
 
-    <!-- Migas de pan (breadcrumb) -->
     <div class="container my-3 mb-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -119,7 +118,53 @@
         </form>
     </section>
 
-    
+    <!-- Mapa o información adicional -->
+    <section class="container mb-5 fade-in" style="animation-delay: 0.2s;">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="contact-section h-100">
+                    <h3 class="mb-4"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Ubicación</h3>
+                    <p>Nos encontramos en el Campo de fútbol Municipal "El Terrer", situado en:</p>
+                    <p class="ms-4 mb-4">C. Literat Azorín, s/n<br>46200 Paiporta, Valencia</p>
+
+                    <!-- Aquí podrías insertar un iframe de Google Maps -->
+                    <div class="ratio ratio-16x9 mt-3 mb-2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1916.2330935856912!2d-0.41405929213650244!3d39.42355541621021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604e5f99a1f401%3A0x93af256885f7471d!2sClub%20de%20F%C3%BAtbol%20E1%20Valencia!5e1!3m2!1ses!2ses!4v1740844096511!5m2!1ses!2ses"  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="contact-section h-100">
+                    <h3 class="mb-4"><i class="bi bi-clock-fill text-primary me-2"></i>Horarios</h3>
+                    <div class="row mb-3">
+                        <div class="col-5 fw-bold">Lunes a Viernes:</div>
+                        <div class="col-7">16:00 - 21:00</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-5 fw-bold">Sábados:</div>
+                        <div class="col-7">09:00 - 14:00</div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-5 fw-bold">Domingos:</div>
+                        <div class="col-7">Cerrado (excepto partidos)</div>
+                    </div>
+
+                    <h3 class="mb-3 mt-5"><i class="bi bi-telephone-fill text-primary me-2"></i>Contacto directo</h3>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-phone me-3 fs-5"></i>
+                        <span>+34 640 27 58 34</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-envelope me-3 fs-5"></i>
+                        <a href="mailto:contacto@cfpaioporta.com"
+                            class="text-decoration-none">contacto@cfpaioporta.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">

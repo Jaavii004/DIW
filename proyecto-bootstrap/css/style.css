@@ -15,22 +15,13 @@ body {
     color: var(--dark);
 }
 
-/* Navbar con efecto glassmorphism */
 .navbar {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(26, 75, 140, 0.1);
-    z-index: 3;
-}
-
-.navbar.fixed-top {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1030;
-    transition: background-color 0.3s;
 }
-
 
 .hero {
     min-height: 100vh;
@@ -133,8 +124,6 @@ body {
     margin-left: auto;
 }
 
-
-/* Calendario de partidos */
 .calendario-partidos {
     background: white;
     border-radius: 16px;
@@ -161,7 +150,6 @@ body {
     color: var(--primary);
 }
 
-/* Botones personalizados */
 .boton-personalizado {
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -181,7 +169,6 @@ body {
     box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
 }
 
-/* Footer mejorado */
 footer {
     background: var(--dark);
     color: white;
@@ -242,8 +229,6 @@ footer {
     object-position: top;
 }
 
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -260,4 +245,10 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--secondary);
+}
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--primary) var(--light);
 }
