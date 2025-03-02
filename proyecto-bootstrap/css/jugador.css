@@ -49,8 +49,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1; /* Hace que todas ocupen el mismo espacio */
-    min-height: 100px; /* Ajusta según lo necesario */
+    flex: 1; 
+}
+
+.estadisticas .col {
+    display: flex;
+    gap: 1rem;
 }
 
 .estadisticas .caja-estadistica p {

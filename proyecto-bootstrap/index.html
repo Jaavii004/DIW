@@ -11,13 +11,18 @@
     <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 
     <meta name="robots" content="index">
-    <meta name="description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
-    <meta name="keywords" content="fútbol, club de fútbol, E1 Paiporta, deportes, Valencia, equipos de fútbol, partidos de fútbol, jugadores de fútbol">
+    <meta name="description"
+        content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <meta name="keywords"
+        content="fútbol, club de fútbol, E1 Paiporta, deportes, Valencia, equipos de fútbol, partidos de fútbol, jugadores de fútbol">
     <meta name="author" content="C.F. E1 PAIPORTA">
     <meta property="og:title" content="C.F. E1 PAIPORTA | La Pasión del Fútbol">
-    <meta property="og:description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <meta property="og:description"
+        content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
     <meta name="twitter:title" content="C.F. E1 PAIPORTA | La Pasión del Fútbol">
-    <meta name="twitter:description" content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <meta name="twitter:description"
+        content="C.F. E1 PAIPORTA - La Pasión del Fútbol. Fundado en 1990, nuestro club representa la tradición y la entrega en cada temporada.">
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -77,7 +82,8 @@
                         <span class="text-warning">orgullo de Paiporta</span>
                     </h1>
                     <p class="lead text-white mb-5">
-                        Fundado en 1990. ¡Si quieres formar parte de la familia celeste la próxima temporada, ven a las puertas abiertas!
+                        Fundado en 1990. ¡Si quieres formar parte de la familia celeste la próxima temporada, ven a las
+                        puertas abiertas!
                     </p>
                     <div class="d-flex gap-3">
                         <a href="#equipo" class="btn boton-personalizado boton-personalizado-primario">
@@ -124,7 +130,7 @@
     <section class="py-5">
         <h2 class="text-center mb-5">Próximo partido</h2>
         <div class="container">
-            <div class="card p-4">
+            <div class="card p-4 shadow-sm">
                 <div class="row align-items-center text-center">
                     <div class="col-12 col-md-4 mb-3 mb-md-0">
                         <img src="img/logo.svg" alt="E1 Paiporta" class="mb-2" style="height: 80px;">
@@ -132,8 +138,30 @@
                     </div>
                     <div class="col-12 col-md-4 mb-3 mb-md-0">
                         <img src="img/LOGO_FFCV.webp" alt="" width="80" class="mb-2">
-                        <p class="mb-0 text-muted">28 Feb - 20:00</p>
+                        <p class="mb-0 text-muted">9 Mar - 20:00</p>
                         <span class="badge bg-primary mt-2">Liga - Jornada 5</span>
+                        <div class="mt-3 contador-contenedor">
+                            <div class="row g-0 justify-content-center">
+                                <div class="col-12">
+                                    <p class="text-center mb-2 fw-bold text-primary">¡COMIENZA EN!</p>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="contador-item">
+                                        <div class="contador-valor" id="contador-horas">00</div>
+                                        <div class="contador-etiqueta">Horas</div>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-1">
+                                    <div class="contador-separador">:</div>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="contador-item">
+                                        <div class="contador-valor" id="contador-minutos">00</div>
+                                        <div class="contador-etiqueta">Minutos</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12 col-md-4">
                         <img src="img/real_madrid_logo.webp" alt="Rival Real Madrid" class="mb-2" style="height: 80px;">
@@ -150,7 +178,7 @@
                 <div class="col-md-3">
                     <div class="tarjeta-jugador d-flex flex-column align-items-center">
                         <img src="img/jugadores/brahim.webp" alt="Foto de Brahim" class="imagen-jugador w-100">
-                        <div class="p-2 text-center"> 
+                        <div class="p-2 text-center">
                             <h4>Brahim</h4>
                             <p class="text-muted">Delantero</p>
                             <div class="estadisticas-jugador">
@@ -226,7 +254,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="py-5" id="calendario">
         <div class="container">
             <h2 class="text-center mb-5">Calendario de Partidos</h2>
@@ -268,31 +296,42 @@
             <div class="row g-4">
                 <div class="col-md-4 d-flex">
                     <div class="card d-flex flex-column h-100 w-100">
-                        <img src="img/e1_despues_dana.webp" class="card-img-top" alt="Imagen después de la DANA de Valencia del 29 de octubre de 2024" style="height: 200px; object-fit: cover;">
+                        <img src="img/e1_despues_dana.webp" class="card-img-top"
+                            alt="Imagen después de la DANA de Valencia del 29 de octubre de 2024"
+                            style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cómo afectó la DANA a E1 Paiporta</h5>
-                            <p class="card-text">El club se recupera con mucha dificultad tras los daños causados por la DANA en Valencia.</p>
-                            <a href="https://www.superdeporte.es/opinion/2024/11/03/dana-en-valencia-el-mensaje-que-lo-cambio-todo-111339000.html" target="_blank" class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer más</a>
+                            <p class="card-text">El club se recupera con mucha dificultad tras los daños causados por la
+                                DANA en Valencia.</p>
+                            <a href="https://www.superdeporte.es/opinion/2024/11/03/dana-en-valencia-el-mensaje-que-lo-cambio-todo-111339000.html"
+                                target="_blank"
+                                class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex">
                     <div class="card d-flex flex-column h-100 w-100">
-                        <img src="img/PRESENTACION_Dd.webp" class="card-img-top" alt="Presentación del director deportivo Javi Sáez" style="height: 200px; object-fit: cover;">
+                        <img src="img/PRESENTACION_Dd.webp" class="card-img-top"
+                            alt="Presentación del director deportivo Javi Sáez"
+                            style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Presentación del director deportivo Javi Sáez</h5>
                             <p class="card-text">El club ha presentado a su nuevo director deportivo.</p>
-                            <a href="#" class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer más</a>
+                            <a href="#" class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer
+                                más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex">
                     <div class="card d-flex flex-column h-100 w-100">
-                        <img src="img/celebracion_liga_femenina.webp" class="card-img-top" alt="Celebración del equipo femenino" style="height: 200px; object-fit: cover;">
+                        <img src="img/celebracion_liga_femenina.webp" class="card-img-top"
+                            alt="Celebración del equipo femenino" style="height: 200px; object-fit: cover;">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Celebración de la sección femenina</h5>
-                            <p class="card-text">El equipo femenino celebra su ascenso a la liga de primera división.</p>
-                            <a href="#" class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer más</a>
+                            <p class="card-text">El equipo femenino celebra su ascenso a la liga de primera división.
+                            </p>
+                            <a href="#" class="btn boton-personalizado boton-personalizado-primario mt-auto">Leer
+                                más</a>
                         </div>
                     </div>
                 </div>
@@ -338,8 +377,10 @@
                 <div class="col-md-4 mb-3">
                     <h4>Síguenos</h4>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/p/Club-de-F%C3%BAtbol-E1-Paiporta-100036108049569/?_rdr" title="Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/cfe1paiporta/?hl=es" title="Instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/p/Club-de-F%C3%BAtbol-E1-Paiporta-100036108049569/?_rdr"
+                            title="Facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/cfe1paiporta/?hl=es" title="Instagram" target="_blank"><i
+                                class="bi bi-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 mb-3 text-center">
