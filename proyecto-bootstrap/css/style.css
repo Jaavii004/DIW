@@ -138,6 +138,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 }
 
 .elemento-partido:hover {
@@ -227,10 +228,6 @@ footer {
     height: 250px;
     object-fit: cover;
     object-position: top;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
 }
 
 ::-webkit-scrollbar-track {

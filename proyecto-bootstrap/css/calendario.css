@@ -72,6 +72,12 @@ body {
     border-color: var(--primario);
 }
 
+.enlace-mes:hover {
+    background: var(--primario);
+    color: var(--blanco);
+    border-color: var(--primario);
+}
+
 .botones-accion {
     display: flex;
     gap: 0.75rem;
